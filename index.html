@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>House Aurora — Elevated Street Heritage</title>
+<title>House Aurora — Intentional Luxury, Accessible Access</title>
+<meta name="description" content="House Aurora — direct-to-culture curation. Terrace footwear, AF1 vault, apparel and luxury accessories. QC inspected, express nationwide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -57,12 +58,12 @@ input{font-family:inherit}
 .splash-wordmark{position:absolute;top:44px;left:0;right:0;z-index:7;text-align:center;font-family:var(--serif);font-size:.72rem;letter-spacing:.62em;text-transform:uppercase;color:rgba(229,218,203,.4);padding-left:.62em;opacity:0;animation:fadeIn 1.6s var(--ease) .4s forwards}
 @keyframes fadeIn{to{opacity:1}}
 
-/* ============ SITE SHELL ============ */
+/* ============ SITE ============ */
 #site{opacity:0;transition:opacity 1.2s var(--ease)}
 #site.in{opacity:1}
 
-.announce{background:var(--slate);color:var(--oatmeal);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;padding:.72em 0;overflow:hidden;white-space:nowrap;position:relative;z-index:60}
-.announce-track{display:inline-flex;gap:4rem;animation:marquee 34s linear infinite;padding-left:1rem}
+.announce{background:var(--slate);color:var(--oatmeal);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;padding:.72em 0;overflow:hidden;white-space:nowrap;position:relative;z-index:60}
+.announce-track{display:inline-flex;gap:4.5rem;animation:marquee 40s linear infinite;padding-left:1rem}
 .announce-track span{display:inline-flex;align-items:center;gap:.9rem;opacity:.82}
 .announce-track b{color:var(--bronze);font-weight:500}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -75,7 +76,7 @@ header.dark{background:rgba(43,30,26,.92);border-bottom-color:rgba(176,139,103,.
 .logo .logo-text{font-family:var(--serif);font-size:1.28rem;letter-spacing:.34em;text-transform:uppercase;font-weight:400;color:var(--espresso);padding-left:.34em;transition:color .5s var(--ease);white-space:nowrap}
 header.dark .logo .logo-text{color:var(--bronze-lt)}
 .nav-links{display:flex;gap:2.6rem;align-items:center;list-style:none}
-.nav-links a{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--espresso);position:relative;padding:.4em 0;transition:color .4s var(--ease)}
+.nav-links a{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--espresso);position:relative;padding:.4em 0;transition:color .4s var(--ease);cursor:pointer}
 header.dark .nav-links a{color:rgba(229,218,203,.82)}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--bronze);transition:width .45s var(--ease)}
 .nav-links a:hover{color:var(--bronze)}
@@ -121,15 +122,15 @@ header.dark .burger{color:var(--oatmeal)}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s var(--ease);pointer-events:none}
 .hero-slide.active{opacity:1;pointer-events:auto}
 .hero-media{position:absolute;inset:0;background:linear-gradient(120deg,#2B1E1A 0%,#3d2b22 40%,#1A1817 100%);overflow:hidden}
-.hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 8s linear}
-.hero-slide.active .hero-media img{transform:scale(1.14)}
+.hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 8s linear;opacity:0}
+.hero-slide.active .hero-media img{transform:scale(1.14);opacity:1}
 .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(26,24,23,.86) 0%,rgba(26,24,23,.5) 45%,rgba(26,24,23,.18) 100%),linear-gradient(to top,rgba(26,24,23,.7) 0%,transparent 45%)}
 .hero-media::before{content:'';position:absolute;inset:0;z-index:2;background-image:var(--grain);opacity:.16;mix-blend-mode:overlay;pointer-events:none}
 .hero-inner{position:relative;z-index:4;max-width:1560px;margin:0 auto;height:100%;padding:0 2.4rem;display:flex;flex-direction:column;justify-content:center}
-.hero-copy{max-width:660px}
+.hero-copy{max-width:680px}
 .hero-copy .eyebrow{display:block;margin-bottom:1.6rem;color:var(--bronze-lt);opacity:0;transform:translateY(18px);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase}
 .hero-copy h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,6.4vw,5.4rem);letter-spacing:.1em;line-height:1.06;text-transform:uppercase;color:var(--cream);margin-bottom:1.5rem;opacity:0;transform:translateY(26px)}
-.hero-copy p{font-size:.98rem;font-weight:300;color:rgba(229,218,203,.76);max-width:440px;margin-bottom:2.6rem;opacity:0;transform:translateY(20px)}
+.hero-copy p{font-size:.98rem;font-weight:300;color:rgba(229,218,203,.76);max-width:460px;margin-bottom:2.6rem;opacity:0;transform:translateY(20px)}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;transform:translateY(20px)}
 .hero-slide.active .hero-copy .eyebrow{animation:heroUp .9s var(--ease) .25s forwards}
 .hero-slide.active .hero-copy h1{animation:heroUp 1s var(--ease) .4s forwards}
@@ -160,75 +161,49 @@ header.dark .burger{color:var(--oatmeal)}
 .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:3.4rem;flex-wrap:wrap}
 .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.9rem);letter-spacing:.14em;text-transform:uppercase;line-height:1.14}
 .sec-head .eyebrow{display:block;margin-bottom:1.1rem;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze)}
-.sec-head p{font-size:.86rem;font-weight:300;color:rgba(43,30,26,.6);max-width:380px;margin-top:.9rem}
+.sec-head p{font-size:.86rem;font-weight:300;color:rgba(43,30,26,.6);max-width:420px;margin-top:.9rem;line-height:1.75}
 .reveal{opacity:0;transform:translateY(38px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 
-/* ============ FLASH DROP ============ */
-.flash{padding:5.5rem 0;background:linear-gradient(135deg,#2B1E1A 0%,#1A1817 100%);position:relative;overflow:hidden}
-.flash::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.16;mix-blend-mode:overlay;pointer-events:none}
-.flash::after{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:180%;background:radial-gradient(circle,rgba(176,139,103,.16) 0%,transparent 62%);pointer-events:none}
-.fd-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:center}
-.fd-copy .eyebrow{color:var(--bronze);display:block;margin-bottom:1.2rem;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase}
-.fd-copy h2{font-family:var(--serif);font-size:clamp(1.8rem,3.8vw,2.9rem);letter-spacing:.12em;text-transform:uppercase;color:var(--cream);font-weight:300;line-height:1.16;margin-bottom:1.1rem}
-.fd-copy p{color:rgba(229,218,203,.66);font-weight:300;font-size:.92rem;max-width:440px;margin-bottom:2rem}
-.fd-countdown{display:flex;gap:.7rem;margin-bottom:2.2rem}
-.fd-countdown>div{background:rgba(248,245,240,.05);border:1px solid rgba(176,139,103,.24);border-radius:8px;min-width:72px;padding:.9rem .6rem;text-align:center}
-.fd-countdown b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--bronze-lt);line-height:1}
-.fd-countdown span{display:block;font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(229,218,203,.4);margin-top:.55rem}
-.fd-visual{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:linear-gradient(155deg,#3d2b22,#1A1817);cursor:pointer;transition:transform .6s var(--ease)}
-.fd-visual:hover{transform:translateY(-4px)}
-.fd-visual>div>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);z-index:1;opacity:0;transition:opacity .5s,transform 1.2s var(--ease)}
-.fd-visual>div>img[style*="opacity: 1"]{opacity:1}
-.fd-visual:hover>div>img{transform:scale(1.04)}
-.fd-visual .p-label{color:rgba(229,218,203,.5);font-family:var(--serif);font-size:1.1rem}
-.fd-tag{position:absolute;top:16px;left:16px;z-index:3;background:var(--bronze);color:var(--slate);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:.6em 1.1em;border-radius:999px}
-.fd-info{position:absolute;left:16px;right:16px;bottom:16px;z-index:3;background:rgba(26,24,23,.86);backdrop-filter:blur(12px);border-radius:6px;padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.fd-info h4{color:var(--cream);font-size:.85rem;font-weight:500;margin-bottom:.2rem}
-.fd-info .v{color:rgba(229,218,203,.5);font-size:.68rem}
-.fd-info .price{color:var(--bronze-lt);font-family:var(--serif);font-size:1.2rem;font-weight:500;white-space:nowrap}
+/* ============ CATEGORY PILLARS ============ */
+.pillars{padding:7rem 0 6rem;background:var(--cream)}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.pillar-card{position:relative;aspect-ratio:3/4.1;border-radius:4px;overflow:hidden;background:linear-gradient(160deg,var(--oatmeal),var(--stone));display:flex;align-items:flex-end;transition:transform .7s var(--ease),box-shadow .7s var(--ease);cursor:pointer}
+.pillar-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(43,30,26,.18)}
+.pillar-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .7s,opacity .5s;filter:saturate(.92);z-index:1;opacity:0}
+.pillar-card:hover img{transform:scale(1.07);filter:saturate(1.05)}
+.pillar-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,24,23,.9) 0%,rgba(26,24,23,.38) 40%,transparent 70%);z-index:2}
+.pillar-body{position:relative;z-index:3;padding:2rem 1.7rem;width:100%}
+.pillar-body h3{font-family:var(--serif);font-size:1.34rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);font-weight:400;margin-bottom:.5rem}
+.pillar-body span{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze-lt);display:flex;align-items:center;gap:.7em;transition:gap .45s var(--ease)}
+.pillar-card:hover .pillar-body span{gap:1.2em}
+.pillar-body span::after{content:'→';font-size:.85rem}
 
-/* ============ CATEGORY GRID ============ */
-.cats{padding:7rem 0 6rem;background:var(--cream)}
-.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
-.cat-card{position:relative;aspect-ratio:3/4.1;border-radius:4px;overflow:hidden;background:linear-gradient(160deg,var(--oatmeal),var(--stone));display:flex;align-items:flex-end;transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
-.cat-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(43,30,26,.18)}
-.cat-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .7s;filter:saturate(.92);z-index:1}
-.cat-card:hover img{transform:scale(1.07);filter:saturate(1.05)}
-.cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,24,23,.88) 0%,rgba(26,24,23,.35) 38%,transparent 68%);z-index:2}
-.cat-body{position:relative;z-index:3;padding:2rem 1.7rem;width:100%}
-.cat-body h3{font-family:var(--serif);font-size:1.34rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);font-weight:400;margin-bottom:.5rem}
-.cat-body span{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze-lt);display:flex;align-items:center;gap:.7em;transition:gap .45s var(--ease)}
-.cat-card:hover .cat-body span{gap:1.2em}
-.cat-body span::after{content:'→';font-size:.85rem}
+/* ============ TIMED ARCHIVAL ALLOCATION ============ */
+.alloc{padding:6rem 0;background:linear-gradient(135deg,#2B1E1A 0%,#1A1817 100%);position:relative;overflow:hidden}
+.alloc::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.16;mix-blend-mode:overlay;pointer-events:none}
+.alloc::after{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:180%;background:radial-gradient(circle,rgba(176,139,103,.16) 0%,transparent 62%);pointer-events:none}
+.alloc-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:center}
+.alloc-copy .eyebrow{color:var(--bronze);display:block;margin-bottom:1.2rem;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase}
+.alloc-copy h2{font-family:var(--serif);font-size:clamp(1.8rem,3.8vw,2.9rem);letter-spacing:.12em;text-transform:uppercase;color:var(--cream);font-weight:300;line-height:1.16;margin-bottom:1.1rem}
+.alloc-copy p{color:rgba(229,218,203,.66);font-weight:300;font-size:.92rem;max-width:460px;margin-bottom:2rem;line-height:1.85}
+.alloc-countdown{display:flex;gap:.7rem;margin-bottom:2.2rem}
+.alloc-countdown>div{background:rgba(248,245,240,.05);border:1px solid rgba(176,139,103,.24);border-radius:8px;min-width:72px;padding:.9rem .6rem;text-align:center}
+.alloc-countdown b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--bronze-lt);line-height:1}
+.alloc-countdown span{display:block;font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(229,218,203,.4);margin-top:.55rem}
+.alloc-visual{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:linear-gradient(155deg,#3d2b22,#1A1817);cursor:pointer;transition:transform .6s var(--ease)}
+.alloc-visual:hover{transform:translateY(-4px)}
+.alloc-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .5s;z-index:1;opacity:0}
+.alloc-visual:hover img{transform:scale(1.04)}
+.alloc-visual .p-label{color:rgba(229,218,203,.5);font-family:var(--serif);font-size:1.1rem}
+.alloc-tag{position:absolute;top:16px;left:16px;z-index:3;background:var(--bronze);color:var(--slate);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:.6em 1.1em;border-radius:999px}
+.alloc-info{position:absolute;left:16px;right:16px;bottom:16px;z-index:3;background:rgba(26,24,23,.86);backdrop-filter:blur(12px);border-radius:6px;padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.alloc-info h4{color:var(--cream);font-size:.85rem;font-weight:500;margin-bottom:.2rem}
+.alloc-info .v{color:rgba(229,218,203,.5);font-size:.68rem}
+.alloc-info .price{color:var(--bronze-lt);font-family:var(--serif);font-size:1.2rem;font-weight:500;white-space:nowrap}
 
-/* ============ SPOTLIGHT ============ */
-.spotlight{padding:6rem 0;background:var(--oatmeal);position:relative;overflow:hidden}
-.spotlight::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.28;mix-blend-mode:multiply;pointer-events:none}
-.spot-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.4rem;position:relative;z-index:2}
-.spot-card{position:relative;overflow:hidden;border-radius:4px;background:linear-gradient(150deg,#3d2b22,#1A1817);min-height:520px;display:flex;align-items:flex-end}
-.spot-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease);z-index:1}
-.spot-card:hover img{transform:scale(1.05)}
-.spot-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,24,23,.9) 0%,rgba(26,24,23,.2) 55%,transparent 100%);z-index:2}
-.spot-body{position:relative;z-index:3;padding:2.8rem;max-width:520px}
-.spot-body .eyebrow{color:var(--bronze-lt);display:block;margin-bottom:1rem;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase}
-.spot-body h3{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.2rem);letter-spacing:.12em;text-transform:uppercase;color:var(--cream);font-weight:400;margin-bottom:.9rem;line-height:1.16}
-.spot-body p{font-size:.85rem;font-weight:300;color:rgba(229,218,203,.72);margin-bottom:1.7rem;max-width:400px}
-.spot-stack{display:grid;grid-template-rows:1fr 1fr;gap:1.4rem}
-.spot-stack .spot-card{min-height:0}
-
-/* ============ TRUST ============ */
-.trust{background:var(--slate);padding:3.4rem 0;position:relative;overflow:hidden}
-.trust::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.2;mix-blend-mode:overlay;pointer-events:none}
-.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;z-index:2}
-.trust-item{display:flex;align-items:center;gap:1.1rem}
-.trust-icon{width:44px;height:44px;flex-shrink:0;border-radius:50%;border:1px solid rgba(176,139,103,.34);display:grid;place-items:center;color:var(--bronze)}
-.trust-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
-.trust-item h4{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cream);font-weight:500;margin-bottom:.22rem}
-.trust-item p{font-size:.68rem;color:rgba(229,218,203,.5);font-weight:300}
-
-/* ============ COLLECTIONS ============ */
-.collections{padding:7rem 0 6rem;background:var(--cream)}
+/* ============ CATALOGUE ============ */
+.catalogue{padding:7rem 0 6rem;background:var(--cream)}
 .tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.4rem}
 .tab{padding:.78em 1.7em;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;border:1px solid rgba(43,30,26,.16);border-radius:999px;color:rgba(43,30,26,.68);transition:all .4s var(--ease);background:transparent}
 .tab:hover{border-color:var(--bronze);color:var(--bronze)}
@@ -242,7 +217,7 @@ header.dark .burger{color:var(--oatmeal)}
 @keyframes cardIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 .p-media{position:relative;aspect-ratio:1/1.08;border-radius:4px;overflow:hidden;background:linear-gradient(155deg,var(--oatmeal) 0%,var(--stone) 100%);margin-bottom:1.1rem;transition:box-shadow .6s var(--ease)}
 .p-media::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.3;mix-blend-mode:multiply;pointer-events:none;z-index:2}
-.p-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),opacity .5s;z-index:1}
+.p-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),opacity .5s;z-index:1;opacity:0}
 .prod-card:hover .p-media img{transform:scale(1.06)}
 .prod-card:hover .p-media{box-shadow:0 24px 50px rgba(43,30,26,.16)}
 .p-label{position:absolute;inset:0;z-index:0;display:grid;place-items:center;text-align:center;padding:1.4rem;font-family:var(--serif);font-size:1rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(43,30,26,.42);line-height:1.5;pointer-events:none}
@@ -267,48 +242,56 @@ header.dark .burger{color:var(--oatmeal)}
 .p-student{margin-top:.25rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze-dk)}
 .p-student b{color:var(--bronze);font-weight:600}
 
-/* ============ DEALS RAIL ============ */
-.deals{padding:6rem 0;background:var(--oatmeal);position:relative;overflow:hidden}
-.deals::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.24;mix-blend-mode:multiply;pointer-events:none}
-.deals-head{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:2.4rem;flex-wrap:wrap}
-.deals-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,3vw,2.4rem);letter-spacing:.14em;text-transform:uppercase}
-.deals-head .eyebrow{display:block;margin-bottom:.9rem;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze)}
-.deals-rail{position:relative;z-index:2;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem}
-.deals-rail::-webkit-scrollbar{height:4px}
-.deals-rail::-webkit-scrollbar-thumb{background:var(--bronze);border-radius:999px}
-.deals-rail::-webkit-scrollbar-track{background:rgba(43,30,26,.08);border-radius:999px}
-.deal-card{scroll-snap-align:start;background:var(--cream);border-radius:6px;overflow:hidden;cursor:pointer;transition:transform .5s var(--ease),box-shadow .5s var(--ease);position:relative}
-.deal-card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(43,30,26,.18)}
-.deal-media{position:relative;aspect-ratio:1/1.05;background:linear-gradient(155deg,var(--stone),var(--oatmeal));overflow:hidden}
-.deal-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),opacity .5s;z-index:1}
-.deal-card:hover .deal-media img{transform:scale(1.06)}
-.deal-pct{position:absolute;top:12px;left:12px;z-index:3;background:var(--red);color:var(--cream);font-size:.56rem;font-weight:600;letter-spacing:.12em;padding:.5em 1em;border-radius:999px}
-.deal-body{padding:1.1rem 1.2rem 1.3rem}
-.deal-body .b{font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);font-weight:500}
-.deal-body h4{font-size:.82rem;font-weight:500;margin:.35rem 0 .2rem;line-height:1.35}
-.deal-body .v{font-size:.68rem;color:rgba(43,30,26,.5);margin-bottom:.8rem}
-.deal-body .pr{display:flex;align-items:baseline;gap:.6rem}
-.deal-body .pr b{font-size:.92rem;color:var(--espresso)}
-.deal-body .pr s{font-size:.72rem;color:rgba(43,30,26,.36);text-decoration:line-through;font-weight:300}
+/* ============ INTENT & CRAFT ============ */
+.intent{padding:7rem 0;background:var(--oatmeal);position:relative;overflow:hidden}
+.intent::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.26;mix-blend-mode:multiply;pointer-events:none}
+.intent-inner{position:relative;z-index:2}
+.intent-head{margin-bottom:4rem;max-width:720px}
+.intent-head .eyebrow{display:block;margin-bottom:1.2rem;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze)}
+.intent-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4vw,3.2rem);letter-spacing:.12em;text-transform:uppercase;line-height:1.14;margin-bottom:1.4rem}
+.intent-head p{font-size:1rem;font-weight:300;color:rgba(43,30,26,.7);line-height:1.85;max-width:640px}
+.intent-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem}
+.intent-col{position:relative;padding-top:2rem;border-top:1px solid rgba(43,30,26,.16)}
+.intent-col .num{font-family:var(--serif);font-size:.72rem;letter-spacing:.34em;color:var(--bronze);margin-bottom:1rem;display:block}
+.intent-col h3{font-family:var(--serif);font-size:1.34rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400;margin-bottom:.9rem;line-height:1.2}
+.intent-col p{font-size:.86rem;font-weight:300;color:rgba(43,30,26,.68);line-height:1.85}
+.intent-col ul{list-style:none;margin-top:1.1rem;display:flex;flex-direction:column;gap:.6rem}
+.intent-col li{font-size:.78rem;font-weight:300;color:rgba(43,30,26,.66);padding-left:1.4rem;position:relative;line-height:1.65}
+.intent-col li::before{content:'';position:absolute;left:0;top:.65em;width:8px;height:1px;background:var(--bronze)}
 
-/* ============ FOOTER CTA ============ */
-.footer-cta{position:relative;padding:6.5rem 0;overflow:hidden;background:linear-gradient(135deg,#2B1E1A,#1A1817)}
-.footer-cta .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28;filter:saturate(.6)}
-.footer-cta::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(26,24,23,.94),rgba(26,24,23,.6))}
-.footer-cta::before{content:'';position:absolute;inset:0;z-index:2;background-image:var(--grain);opacity:.2;mix-blend-mode:overlay;pointer-events:none}
-.fc-inner{position:relative;z-index:4;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.fc-inner h2{font-family:var(--serif);font-size:clamp(1.8rem,3.8vw,3rem);letter-spacing:.13em;text-transform:uppercase;color:var(--cream);font-weight:300;line-height:1.14;margin-bottom:1.1rem}
-.fc-inner p{color:rgba(229,218,203,.66);font-weight:300;font-size:.9rem;max-width:440px}
-.fc-inner .eyebrow{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze);display:block;margin-bottom:1rem}
+/* ============ HERITAGE / STORY ============ */
+.heritage{padding:7rem 0;background:var(--cream);position:relative}
+.heritage-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.heritage-media{position:relative;aspect-ratio:5/6;border-radius:6px;overflow:hidden;background:linear-gradient(155deg,var(--oatmeal),var(--stone))}
+.heritage-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s,transform 1.4s var(--ease);z-index:1}
+.heritage-media:hover img{transform:scale(1.04)}
+.heritage-copy .eyebrow{display:block;margin-bottom:1.2rem;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze)}
+.heritage-copy h2{font-family:var(--serif);font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:300;letter-spacing:.13em;text-transform:uppercase;line-height:1.16;margin-bottom:1.4rem}
+.heritage-copy p{font-size:.94rem;font-weight:300;color:rgba(43,30,26,.72);line-height:1.9;margin-bottom:1.2rem}
+.heritage-copy p:last-of-type{margin-bottom:2rem}
+.heritage-meta{display:flex;gap:2.4rem;margin-top:2rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(43,30,26,.1)}
+.heritage-meta>div b{display:block;font-family:var(--serif);font-size:1.6rem;color:var(--espresso);font-weight:500;line-height:1}
+.heritage-meta>div span{display:block;font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(43,30,26,.5);margin-top:.5rem}
+
+/* ============ NEWSLETTER ============ */
+.community{position:relative;padding:6.5rem 0;overflow:hidden;background:linear-gradient(135deg,#2B1E1A,#1A1817)}
+.community .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.24;filter:saturate(.55)}
+.community::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(26,24,23,.95),rgba(26,24,23,.62))}
+.community::before{content:'';position:absolute;inset:0;z-index:2;background-image:var(--grain);opacity:.2;mix-blend-mode:overlay;pointer-events:none}
+.comm-inner{position:relative;z-index:4;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
+.comm-inner h2{font-family:var(--serif);font-size:clamp(1.8rem,3.8vw,3rem);letter-spacing:.13em;text-transform:uppercase;color:var(--cream);font-weight:300;line-height:1.14;margin-bottom:1.1rem}
+.comm-inner p{color:rgba(229,218,203,.66);font-weight:300;font-size:.92rem;max-width:440px;line-height:1.8}
+.comm-inner .eyebrow{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze);display:block;margin-bottom:1rem}
 .news-form{display:flex;gap:.7rem;flex-wrap:wrap}
 .news-form input{flex:1;min-width:220px;background:rgba(248,245,240,.06);border:1px solid rgba(176,139,103,.32);border-radius:999px;padding:1.05em 1.6em;color:var(--cream);font-size:.78rem;outline:none;transition:all .4s var(--ease)}
 .news-form input::placeholder{color:rgba(229,218,203,.4);letter-spacing:.14em;font-size:.7rem;text-transform:uppercase}
 .news-form input:focus{border-color:var(--bronze);background:rgba(176,139,103,.08)}
 
+/* ============ FOOTER ============ */
 footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:relative}
 .f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(176,139,103,.16)}
 .f-brand .logo-text{color:var(--bronze-lt);font-size:1.15rem}
-.f-brand p{margin-top:1.2rem;font-size:.8rem;font-weight:300;color:rgba(229,218,203,.5);max-width:300px;line-height:1.75}
+.f-brand p{margin-top:1.2rem;font-size:.8rem;font-weight:300;color:rgba(229,218,203,.5);max-width:320px;line-height:1.75}
 .f-col h4{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);margin-bottom:1.5rem;font-weight:500}
 .f-col ul{list-style:none;display:flex;flex-direction:column;gap:.85rem}
 .f-col a{font-size:.78rem;font-weight:300;color:rgba(229,218,203,.66);transition:color .35s var(--ease),padding-left .35s var(--ease);display:inline-block;cursor:pointer}
@@ -318,11 +301,10 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .pay-row{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
 .pay-chip{font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;padding:.5em .95em;border:1px solid rgba(176,139,103,.3);border-radius:4px;color:rgba(229,218,203,.5)}
 
-/* ============ OVERLAY ============ */
+/* ============ OVERLAY & DRAWERS ============ */
 .overlay{position:fixed;inset:0;z-index:200;background:rgba(26,24,23,.55);backdrop-filter:blur(5px);opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
 .overlay.on{opacity:1;visibility:visible}
 
-/* ============ CART ============ */
 .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--cream);z-index:210;transform:translateX(100%);transition:transform .62s var(--ease);display:flex;flex-direction:column;box-shadow:-30px 0 80px rgba(26,24,23,.25)}
 .cart-drawer.on{transform:none}
 .cart-head{padding:1.9rem 1.8rem;border-bottom:1px solid rgba(43,30,26,.1);display:flex;align-items:center;justify-content:space-between;background:var(--espresso)}
@@ -361,7 +343,6 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .cart-total b{font-family:var(--serif);font-size:1.5rem;font-weight:500}
 .cart-foot .btn{width:100%}
 
-/* ============ QUICK VIEW ============ */
 .qv{position:fixed;inset:0;z-index:220;display:grid;place-items:center;padding:2rem;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
 .qv.on{opacity:1;visibility:visible}
 .qv-box{position:relative;background:var(--cream);width:min(1000px,100%);max-height:88vh;overflow-y:auto;border-radius:5px;display:grid;grid-template-columns:1fr 1fr;transform:translateY(26px) scale(.98);transition:transform .6s var(--ease);box-shadow:0 40px 100px rgba(26,24,23,.4)}
@@ -369,6 +350,17 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .qv-media{position:relative;background:linear-gradient(155deg,var(--oatmeal),var(--stone));min-height:440px;overflow:hidden}
 .qv-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .5s}
 .qv-media .p-label{font-size:1.3rem;padding:2rem}
+.qv-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:8;width:40px;height:40px;border-radius:50%;background:rgba(248,245,240,.9);backdrop-filter:blur(8px);display:grid;place-items:center;padding:0;font-family:var(--serif);font-size:1.4rem;line-height:1;color:var(--espresso);opacity:0;visibility:hidden;transition:all .35s var(--ease);cursor:pointer}
+.qv-media:hover .qv-arrow{opacity:1;visibility:visible}
+.qv-arrow:hover{background:var(--espresso);color:var(--cream)}
+.qv-arrow-prev{left:14px}
+.qv-arrow-next{right:14px}
+.qv-dots{position:absolute;left:0;right:0;bottom:16px;z-index:8;display:flex;justify-content:center;gap:7px}
+.qv-dot{width:6px;height:6px;border-radius:50%;background:rgba(43,30,26,.28);border:none;padding:0;cursor:pointer;transition:all .3s var(--ease)}
+.qv-dot.on{background:var(--bronze);width:16px;border-radius:3px}
+@media(max-width:900px){
+  .qv-arrow{opacity:1;visibility:visible;width:34px;height:34px;font-size:1.2rem}
+}
 .qv-body{padding:3rem 2.8rem;display:flex;flex-direction:column}
 .qv-close{position:absolute;top:18px;right:18px;z-index:5;width:38px;height:38px;border-radius:50%;background:rgba(248,245,240,.9);display:grid;place-items:center;transition:all .35s var(--ease);padding:0}
 .qv-close:hover{background:var(--espresso);color:var(--cream);transform:rotate(90deg)}
@@ -394,7 +386,6 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .qv-actions{margin-top:auto;display:flex;gap:.7rem}
 .qv-actions .btn{flex:1}
 
-/* ============ MOBILE MENU ============ */
 .mobile-menu{position:fixed;top:0;left:0;bottom:0;width:min(360px,88%);background:var(--cream);z-index:230;transform:translateX(-100%);transition:transform .55s var(--ease);display:flex;flex-direction:column;box-shadow:20px 0 60px rgba(26,24,23,.3)}
 .mobile-menu.on{transform:none}
 .mm-head{padding:1.4rem 1.6rem;border-bottom:1px solid rgba(43,30,26,.08);display:flex;align-items:center;justify-content:space-between}
@@ -409,7 +400,6 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .mm-link:hover span{transform:translateX(4px)}
 .mm-foot{padding:1.4rem 1.6rem;border-top:1px solid rgba(43,30,26,.08);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(43,30,26,.4)}
 
-/* ============ SEARCH ============ */
 .search-ov{position:fixed;inset:0;z-index:240;background:rgba(26,24,23,.75);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s;overflow-y:auto}
 .search-ov.on{opacity:1;visibility:visible}
 .search-inner{max-width:760px;margin:8vh auto 0;padding:0 1.4rem 4rem}
@@ -431,7 +421,6 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .sr-price{font-size:.82rem;font-weight:500;white-space:nowrap}
 .sr-empty{padding:2.5rem 1.5rem;text-align:center;color:rgba(43,30,26,.5);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
 
-/* ============ SIZE GUIDE ============ */
 .sg{position:fixed;inset:0;z-index:250;display:grid;place-items:center;padding:1.5rem;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s;background:rgba(26,24,23,.6);backdrop-filter:blur(6px)}
 .sg.on{opacity:1;visibility:visible}
 .sg-box{background:var(--cream);border-radius:12px;width:min(560px,100%);max-height:85vh;overflow-y:auto;padding:2.2rem 2rem;transform:translateY(20px) scale(.97);transition:transform .5s var(--ease);box-shadow:0 40px 100px rgba(26,24,23,.4);position:relative}
@@ -447,12 +436,10 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .sg td:first-child{font-weight:500}
 .sg-note{margin-top:1.4rem;font-size:.72rem;color:rgba(43,30,26,.55);line-height:1.7;font-weight:300}
 
-/* ============ TOAST ============ */
 .toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,80px);z-index:300;background:var(--espresso);color:var(--cream);padding:1em 2em;border-radius:999px;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;box-shadow:0 16px 40px rgba(26,24,23,.35);opacity:0;transition:all .55s var(--ease);display:flex;align-items:center;gap:.8rem;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
 .toast.on{transform:translate(-50%,0);opacity:1}
 .toast::before{content:'✦';color:var(--bronze);flex-shrink:0}
 
-/* ============ BACK TOP ============ */
 .back-top{position:fixed;bottom:30px;right:30px;z-index:150;width:46px;height:46px;border-radius:50%;background:var(--espresso);color:var(--cream);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:all .45s var(--ease);box-shadow:0 12px 34px rgba(26,24,23,.28);cursor:pointer;padding:0}
 .back-top.on{opacity:1;visibility:visible;transform:none}
 .back-top:hover{background:var(--bronze);color:var(--slate);transform:translateY(-3px)}
@@ -461,8 +448,9 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 /* ============ RESPONSIVE ============ */
 @media(max-width:1180px){
   .prod-grid{grid-template-columns:repeat(3,1fr)}
-  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .pillar-grid{grid-template-columns:repeat(2,1fr)}
   .f-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .intent-cols{grid-template-columns:repeat(3,1fr);gap:1.8rem}
 }
 @media(max-width:900px){
   .nav{padding:1rem 1.4rem}
@@ -470,42 +458,38 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   .burger{display:grid}
   .wrap,.hero-inner{padding:0 1.4rem}
   .hero-nav{padding:0 1.4rem;bottom:2rem}
-  .spot-grid{grid-template-columns:1fr}
-  .spot-stack{grid-template-rows:auto auto}
-  .trust-row{grid-template-columns:1fr 1fr;gap:1.5rem}
-  .fc-inner{grid-template-columns:1fr;gap:2rem}
+  .heritage-inner{grid-template-columns:1fr;gap:2.4rem}
+  .heritage-media{max-width:520px}
+  .intent-cols{grid-template-columns:1fr;gap:2rem}
+  .comm-inner{grid-template-columns:1fr;gap:2rem}
   .qv-box{grid-template-columns:1fr}
   .qv-media{min-height:280px}
   .qv-body{padding:2rem 1.6rem}
   .sec-head{margin-bottom:2.4rem}
-  .cats,.collections,.deals{padding:4.5rem 0}
-  .spotlight{padding:4rem 0}
-  .flash{padding:4rem 0}
-  .fd-inner{grid-template-columns:1fr;gap:2.4rem}
-  .fd-visual{max-width:420px;margin:0 auto}
-  .deals-rail{grid-auto-columns:minmax(220px,1fr)}
+  .pillars,.catalogue,.intent,.heritage{padding:4.5rem 0}
+  .alloc{padding:4rem 0}
+  .alloc-inner{grid-template-columns:1fr;gap:2.4rem}
+  .alloc-visual{max-width:420px;margin:0 auto}
   .sound-toggle span:last-child{display:none}
   .sound-toggle{padding:.6em}
 }
 @media(max-width:640px){
   .prod-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem .9rem}
-  .cat-grid{grid-template-columns:1fr 1fr;gap:.8rem}
-  .trust-row{grid-template-columns:1fr}
+  .pillar-grid{grid-template-columns:1fr 1fr;gap:.8rem}
   .f-grid{grid-template-columns:1fr}
   .hero{height:auto;min-height:600px}
   .hero-arrows{display:none}
   .cart-drawer{width:100%}
   .announce{font-size:.52rem}
-  .fd-countdown>div{min-width:60px;padding:.75rem .5rem}
-  .fd-countdown b{font-size:1.2rem}
-  .deals-rail{grid-auto-columns:minmax(200px,1fr)}
+  .alloc-countdown>div{min-width:60px;padding:.75rem .5rem}
+  .alloc-countdown b{font-size:1.2rem}
   .back-top{bottom:20px;right:20px;width:42px;height:42px}
 }
 </style>
 </head>
 <body class="locked">
 
-<!-- ============ SPLASH ============ -->
+<!-- SPLASH -->
 <div id="splash">
   <div class="splash-backdrop"></div>
   <video id="splashVideo" muted playsinline preload="auto"></video>
@@ -514,25 +498,25 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   <div class="splash-logo" id="splashLogo">
     <span class="halo"></span>
     <span class="logo-mark">House Aurora<span class="shine-sweep"></span></span>
-    <span class="sub">Elevated Street Heritage</span>
+    <span class="sub">Intentional Luxury · Accessible Access</span>
   </div>
   <div class="splash-progress" id="splashProgress"><i class="on"></i><i></i><i></i><i></i></div>
-  <button class="splash-skip" id="splashSkip">Skip Intro</button>
+  <button class="splash-skip" id="splashSkip">Enter</button>
 </div>
 
-<!-- ============ SITE ============ -->
+<!-- SITE -->
 <div id="site">
 
   <div class="announce">
     <div class="announce-track">
-      <span><b>✦</b> Drop Prices — Under Market</span>
-      <span><b>✦</b> 10% Extra Off For Students</span>
-      <span><b>✦</b> QC Inspected · Express Delivery</span>
-      <span><b>✦</b> Secure Payment Gateways</span>
-      <span><b>✦</b> Drop Prices — Under Market</span>
-      <span><b>✦</b> 10% Extra Off For Students</span>
-      <span><b>✦</b> QC Inspected · Express Delivery</span>
-      <span><b>✦</b> Secure Payment Gateways</span>
+      <span><b>◆</b> Limited Allocation</span>
+      <span><b>◆</b> QC Inspected On Every Order</span>
+      <span><b>◆</b> Express Nationwide Delivery</span>
+      <span><b>◆</b> Curated Access — No Middleman Markup</span>
+      <span><b>◆</b> Limited Allocation</span>
+      <span><b>◆</b> QC Inspected On Every Order</span>
+      <span><b>◆</b> Express Nationwide Delivery</span>
+      <span><b>◆</b> Curated Access — No Middleman Markup</span>
     </div>
   </div>
 
@@ -543,12 +527,14 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
         <span class="logo-text">House Aurora</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#collections">Shop All</a></li>
-        <li><a href="#collections" data-filter="terrace">Terrace</a></li>
-        <li><a href="#collections" data-filter="af1">AF1 Vault</a></li>
-        <li><a href="#collections" data-filter="apparel">Apparel</a></li>
-        <li><a href="#collections" data-filter="accessories">Luxury</a></li>
-        <li><a href="#heritage">About</a></li>
+        <li><a data-scroll="catalogue">Catalogue</a></li>
+        <li><a data-filter="terrace">Terrace</a></li>
+        <li><a data-filter="af1">AF1 Vault</a></li>
+        <li><a data-filter="airmax">Air Max</a></li>
+        <li><a data-filter="activewear">Activewear</a></li>
+        <li><a data-filter="apparel">Apparel</a></li>
+        <li><a data-filter="accessories">Luxury</a></li>
+        <li><a data-scroll="intent">Our Intent</a></li>
       </ul>
       <div class="nav-actions">
         <button class="icon-btn" id="searchBtn" aria-label="Search">
@@ -561,7 +547,7 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
           </button>
           <div class="sound-panel" id="soundPanel" role="dialog" aria-label="Volume control">
             <div class="sp-row">
-              <span class="sp-title">Volume</span>
+              <span class="sp-title">Ambient Volume</span>
               <button class="sp-mute" id="soundMute">Mute</button>
             </div>
             <input type="range" id="volSlider" class="vol-slider" min="0" max="100" value="14" aria-label="Volume slider">
@@ -580,41 +566,41 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO NARRATIVE -->
     <section class="hero" id="hero">
       <div class="hero-slide active">
         <div class="hero-media" id="hm1"></div>
         <div class="hero-inner"><div class="hero-copy">
-          <span class="eyebrow">Collection 01 — Terrace</span>
-          <h1>The Terrace<br>Edit</h1>
-          <p>Samba, Forum &amp; Centennial. Curated silhouettes built for the pavement and the culture.</p>
+          <span class="eyebrow">Est. Johannesburg — Direct-to-Culture Curation</span>
+          <h1>The Terrace<br>Archive</h1>
+          <p>Samba, Forum, Centennial. Silhouettes with subcultural history — sourced, inspected and allocated without middleman markup.</p>
           <div class="hero-cta">
-            <a href="#collections" class="btn btn-bronze" data-filter="terrace">Shop Terrace</a>
-            <a href="#heritage" class="btn btn-ghost">Our Heritage</a>
+            <a class="btn btn-bronze" data-filter="terrace">Explore Terrace</a>
+            <a class="btn btn-ghost" data-scroll="intent">Our Intent</a>
           </div>
         </div></div>
       </div>
       <div class="hero-slide">
         <div class="hero-media" id="hm2"></div>
         <div class="hero-inner"><div class="hero-copy">
-          <span class="eyebrow">Collection 02 — Air Force 1 Vault</span>
+          <span class="eyebrow">Archival Allocation — Air Force 1 Vault</span>
           <h1>Enter<br>The Vault</h1>
-          <p>Rare suedes, collaborations and custom editions. Every pair QC inspected before it ships.</p>
+          <p>Textured suedes, cel-shaded graphics and collab editions. Each pair QC inspected before it leaves the studio.</p>
           <div class="hero-cta">
-            <a href="#collections" class="btn btn-bronze" data-filter="af1">Open The Vault</a>
-            <a href="#collections" class="btn btn-ghost" data-filter="all">View All</a>
+            <a class="btn btn-bronze" data-filter="af1">Open The Vault</a>
+            <a class="btn btn-ghost" data-scroll="catalogue">Full Catalogue</a>
           </div>
         </div></div>
       </div>
       <div class="hero-slide">
         <div class="hero-media" id="hm3"></div>
         <div class="hero-inner"><div class="hero-copy">
-          <span class="eyebrow">House Aurora — Est. Johannesburg</span>
+          <span class="eyebrow">Intentional Luxury · Accessible Access</span>
           <h1>Elevated<br>Street Heritage</h1>
-          <p>Where tactile luxury meets modern urban authenticity. Grounded tones. Considered construction.</p>
+          <p>Where tactile luxury meets modern urban authenticity. Considered materials, grounded tones, no compromise on craft.</p>
           <div class="hero-cta">
-            <a href="#collections" class="btn btn-bronze" data-filter="all">Shop The Drop</a>
-            <a href="#spotlight" class="btn btn-ghost">The Lookbook</a>
+            <a class="btn btn-bronze" data-scroll="catalogue">Shop The Catalogue</a>
+            <a class="btn btn-ghost" data-scroll="heritage">The House Story</a>
           </div>
         </div></div>
       </div>
@@ -631,187 +617,172 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
       </div>
     </section>
 
-    <!-- FLASH DROP -->
-    <section class="flash">
-      <div class="wrap fd-inner">
-        <div class="fd-copy reveal">
-          <span class="eyebrow">Flash Drop — This Week Only</span>
-          <h2>Enter The<br>Air Force Vault</h2>
-          <p>Rare suedes, collaborations and custom editions. Up to 30% off the standard price. Once they're gone, they're gone.</p>
-          <div class="fd-countdown" id="fdCountdown">
-            <div><b id="fdD">0</b><span>Days</span></div>
-            <div><b id="fdH">0</b><span>Hrs</span></div>
-            <div><b id="fdM">0</b><span>Min</span></div>
-            <div><b id="fdS">0</b><span>Sec</span></div>
-          </div>
-          <a href="#collections" class="btn btn-bronze" data-filter="af1">Shop The Vault</a>
-        </div>
-        <div class="fd-visual reveal" id="fdVisual">
-          <span class="fd-tag">Featured Drop</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CATEGORIES -->
-    <section class="cats">
+    <!-- CURATED CATEGORY PILLARS -->
+    <section class="pillars">
       <div class="wrap">
         <div class="sec-head reveal">
-          <div><span class="eyebrow">Shop by Category</span><h2>Curated Collections</h2></div>
-          <p>Four pillars. Every piece inspected, every drop intentional.</p>
+          <div>
+            <span class="eyebrow">Curated Pillars</span>
+            <h2>Six Catalysts</h2>
+          </div>
+          <p>Every drop enters through one of six doorways — footwear heritage, vault rarity, air cushioning, activewear craft, outerwear and luxury access.</p>
         </div>
-        <div class="cat-grid">
-          <a class="cat-card reveal" href="#collections" data-filter="terrace">
+        <div class="pillar-grid">
+          <div class="pillar-card reveal" data-filter="terrace">
             <span class="img-slot" data-file="category-terrace-collection" data-label="Terrace"></span>
-            <div class="cat-body"><h3>Terrace</h3><span>Samba · Forum · Centennial</span></div>
-          </a>
-          <a class="cat-card reveal" href="#collections" data-filter="af1">
+            <div class="pillar-body"><h3>Terrace</h3><span>Samba · Forum · Adimatic</span></div>
+          </div>
+          <div class="pillar-card reveal" data-filter="af1">
             <span class="img-slot" data-file="category-af1-vault" data-label="AF1 Vault"></span>
-            <div class="cat-body"><h3>AF1 Vault</h3><span>Rare · Collab · Custom</span></div>
-          </a>
-          <a class="cat-card reveal" href="#collections" data-filter="apparel">
+            <div class="pillar-body"><h3>AF1 Vault</h3><span>Rare · Collab · Custom</span></div>
+          </div>
+          <div class="pillar-card reveal" data-filter="airmax">
+            <span class="img-slot" data-file="nike_air_max_95_grey_black_gradient" data-label="Air Max"></span>
+            <div class="pillar-body"><h3>Air Max</h3><span>270 · 95 · TT Series</span></div>
+          </div>
+          <div class="pillar-card reveal" data-filter="activewear">
+            <span class="img-slot" data-file="alo_yoga_suit_up_motivate_full_zip_track_jacket" data-label="Alo Activewear"></span>
+            <div class="pillar-body"><h3>Activewear</h3><span>Alo Yoga · Airlift · Suit Up</span></div>
+          </div>
+          <div class="pillar-card reveal" data-filter="apparel">
             <span class="img-slot" data-file="category-apparel-outerwear" data-label="Apparel"></span>
-            <div class="cat-body"><h3>Apparel</h3><span>Hoodies · Jackets · Tracksuits</span></div>
-          </a>
-          <a class="cat-card reveal" href="#collections" data-filter="accessories">
+            <div class="pillar-body"><h3>Apparel</h3><span>Hoodies · Jackets · Tracksuits</span></div>
+          </div>
+          <div class="pillar-card reveal" data-filter="accessories">
             <span class="img-slot" data-file="category-luxury-accessories" data-label="Luxury"></span>
-            <div class="cat-body"><h3>Luxury</h3><span>Beanies · Slides · Accessories</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SPOTLIGHT -->
-    <section class="spotlight" id="spotlight">
-      <div class="wrap">
-        <div class="spot-grid">
-          <div class="spot-card reveal">
-            <span class="img-slot" data-file="model-apparel-fullbody" data-label="Lookbook"></span>
-            <div class="spot-body">
-              <span class="eyebrow">The Lookbook</span>
-              <h3>Built For The Street,<br>Finished Like Luxury</h3>
-              <p>Full-length editorial styling from the House Aurora studio — layered silhouettes in stone, espresso and warm sand.</p>
-              <a href="#collections" class="btn btn-ghost" data-filter="all">Shop The Look</a>
-            </div>
-          </div>
-          <div class="spot-stack">
-            <div class="spot-card reveal">
-              <span class="img-slot" data-file="brand-packaging-unboxing" data-label="Unboxing"></span>
-              <div class="spot-body" style="padding:2rem">
-                <span class="eyebrow">Authenticity Guaranteed</span>
-                <h3 style="font-size:1.35rem">The Unboxing</h3>
-                <p style="margin-bottom:0">Premium packaging, QC inspected, sealed and shipped express.</p>
-              </div>
-            </div>
-            <div class="spot-card reveal">
-              <span class="img-slot" data-file="brand-studio-heritage" data-label="Heritage"></span>
-              <div class="spot-body" style="padding:2rem">
-                <span class="eyebrow">Our Heritage</span>
-                <h3 style="font-size:1.35rem">Studio &amp; Craft</h3>
-                <p style="margin-bottom:0">Tactile cardstock, bronze foil, stone grain — a local identity built to last.</p>
-              </div>
-            </div>
+            <div class="pillar-body"><h3>Luxury</h3><span>Beanies · Slides · Access</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TRUST -->
-    <section class="trust">
-      <div class="wrap">
-        <div class="trust-row">
-          <div class="trust-item reveal">
-            <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-            <div><h4>QC Inspected</h4><p>Every pair checked before dispatch</p></div>
+    <!-- TIMED ARCHIVAL ALLOCATION -->
+    <section class="alloc">
+      <div class="wrap alloc-inner">
+        <div class="alloc-copy reveal">
+          <span class="eyebrow">Archival Allocation 07 · Timed Window</span>
+          <h2>The Stüssy<br>Dice Edition</h2>
+          <p>Each allocation is released in a single timed window. Once the window closes, the piece returns to the vault — no restocks, no re-issues.</p>
+          <div class="alloc-countdown" id="allocCountdown">
+            <div><b id="adD">00</b><span>Days</span></div>
+            <div><b id="adH">00</b><span>Hrs</span></div>
+            <div><b id="adM">00</b><span>Min</span></div>
+            <div><b id="adS">00</b><span>Sec</span></div>
           </div>
-          <div class="trust-item reveal">
-            <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M1 3h13v13H1z"/><path d="M14 8h4l3 3v5h-7z"/><circle cx="6" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg></div>
-            <div><h4>Express Delivery</h4><p>Nationwide, tracked and fast</p></div>
-          </div>
-          <div class="trust-item reveal">
-            <div class="trust-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
-            <div><h4>Secure Payment</h4><p>Trusted gateway providers</p></div>
-          </div>
-          <div class="trust-item reveal">
-            <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M20.6 8.4a5 5 0 0 0-8.6-2.2A5 5 0 0 0 3.4 8.4c-1.4 2.6.4 5.4 3 7.4L12 21l5.6-5.2c2.6-2 4.4-4.8 3-7.4z"/></svg></div>
-            <div><h4>Student 10% Off</h4><p>Verified students save more</p></div>
-          </div>
+          <a class="btn btn-bronze" data-filter="af1">View Allocation</a>
+        </div>
+        <div class="alloc-visual reveal" id="allocVisual">
+          <span class="alloc-tag">Featured Allocation</span>
         </div>
       </div>
     </section>
 
-    <!-- COLLECTIONS -->
-    <section class="collections" id="collections">
+    <!-- CATALOGUE -->
+    <section class="catalogue" id="catalogue">
       <div class="wrap">
         <div class="sec-head reveal">
-          <div><span class="eyebrow">The Catalogue</span><h2>Shop The Drop</h2></div>
-          <p>Footwear, outerwear and accessories — mapped, sized and ready to ship.</p>
+          <div>
+            <span class="eyebrow">The Catalogue</span>
+            <h2>Live Inventory</h2>
+          </div>
+          <p>Every piece inspected in the studio. Sized, priced and ready to ship nationwide.</p>
         </div>
         <div class="tabs" id="tabs">
           <button class="tab active" data-filter="all">All</button>
           <button class="tab" data-filter="terrace">Terrace Footwear</button>
           <button class="tab" data-filter="af1">AF1 Vault</button>
+          <button class="tab" data-filter="airmax">Air Max Series</button>
           <button class="tab" data-filter="apparel">Apparel &amp; Outerwear</button>
+          <button class="tab" data-filter="activewear">Alo Activewear</button>
           <button class="tab" data-filter="accessories">Luxury &amp; Slides</button>
         </div>
-        <div class="prod-count" id="prodCount">Showing <b>0</b> products</div>
+        <div class="prod-count" id="prodCount">Showing <b>0</b> pieces</div>
         <div class="prod-grid" id="prodGrid"></div>
       </div>
     </section>
 
-    <!-- DEALS RAIL -->
-    <section class="deals">
-      <div class="wrap">
-        <div class="deals-head reveal">
-          <div>
-            <span class="eyebrow">On Sale Now</span>
-            <h2>Under Market Price</h2>
-          </div>
-          <a href="#collections" class="btn btn-outline" data-filter="all">View All Drops</a>
+    <!-- OUR INTENT & CRAFT -->
+    <section class="intent" id="intent">
+      <div class="wrap intent-inner">
+        <div class="intent-head reveal">
+          <span class="eyebrow">Our Intent &amp; Craft</span>
+          <h2>Intentional Luxury<br>at Accessible Access</h2>
+          <p>House Aurora exists to close the gap between subcultural taste and considered craft. We curate directly from the source — no wholesaler margins, no third-party markups — so the pieces that matter arrive at a price that respects the culture they came from.</p>
         </div>
-        <div class="deals-rail" id="dealsRail"></div>
+        <div class="intent-cols">
+          <div class="intent-col reveal">
+            <span class="num">01 — Origin &amp; Ethos</span>
+            <h3>Direct-to-Culture</h3>
+            <p>We build the catalogue at the source. Terrace silhouettes, vault-grade Air Force 1s, considered outerwear and luxury accessories — sourced with intention, not scraped from a distributor feed.</p>
+            <ul>
+              <li>Direct sourcing, no middlemen</li>
+              <li>Culturally literate curation</li>
+              <li>Made in Johannesburg, worn everywhere</li>
+            </ul>
+          </div>
+          <div class="intent-col reveal">
+            <span class="num">02 — QC Protocol</span>
+            <h3>Inspection Standard</h3>
+            <p>Every piece is opened, examined and photographed in the studio before it ships. Stitching, materials, hardware, alignment — nothing leaves without clearance.</p>
+            <ul>
+              <li>Individually inspected before dispatch</li>
+              <li>Studio photography for each variant</li>
+              <li>Signature bronze-foil packaging</li>
+            </ul>
+          </div>
+          <div class="intent-col reveal">
+            <span class="num">03 — Curated Access</span>
+            <h3>Allocation, Not Volume</h3>
+            <p>We release in timed allocations instead of mass volume. Every drop is finite. Every window closes. You get access to the pieces that matter, not an endless scroll of what doesn't.</p>
+            <ul>
+              <li>Timed archival windows</li>
+              <li>Finite allocation per release</li>
+              <li>Member-first notifications</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- HERITAGE -->
-    <section class="spotlight" id="heritage" style="padding:6rem 0">
-      <div class="wrap">
-        <div class="sec-head reveal" style="margin-bottom:2rem">
-          <div><span class="eyebrow">About House Aurora</span><h2>Earth &amp; Luxury</h2></div>
+    <!-- HERITAGE / STORY -->
+    <section class="heritage" id="heritage">
+      <div class="wrap heritage-inner">
+        <div class="heritage-media reveal">
+          <span class="img-slot" data-file="brand-studio-heritage" data-label="House Aurora Studio"></span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;position:relative;z-index:2" class="heritage-grid">
-          <p class="reveal" style="font-size:1.05rem;font-weight:300;line-height:1.9;color:rgba(43,30,26,.78)">
-            House Aurora sits at the intersection of heritage quality and modern urban authenticity.
-            Warm, grounded tones — stone, espresso, warm sand — create a sense of longevity rather than
-            disposable fast fashion. The dynamic HA monogram blends script-like fluidity with structured
-            typography, echoing modern streetwear iconography.
-          </p>
-          <p class="reveal" style="font-size:.9rem;font-weight:300;line-height:1.95;color:rgba(43,30,26,.62)">
-            We source terrace silhouettes, vault-grade Air Force 1s, considered outerwear and luxury
-            accessories. Every item is inspected, photographed and packed in the studio. Textured cardstock,
-            bronze foil and raw cotton textures run through every touchpoint — from the box to the browser.
-            This is a distinctly local, elevated retail identity.
-          </p>
+        <div class="heritage-copy reveal">
+          <span class="eyebrow">The House Story</span>
+          <h2>Earth &amp; Luxury</h2>
+          <p>House Aurora sits at the intersection of heritage quality and modern urban authenticity. Warm, grounded tones — stone, espresso, warm sand — create a sense of longevity rather than disposable fast fashion.</p>
+          <p>The dynamic HA monogram blends script-like fluidity with structured typography, echoing modern streetwear iconography. Textured cardstock, bronze foil and raw cotton textures run through every touchpoint — from the box to the browser.</p>
+          <p>This is a distinctly local, elevated retail identity — engineered without middleman markups, so what you wear carries the culture it came from.</p>
+          <div class="heritage-meta">
+            <div><b>Est. 2026</b><span>Johannesburg</span></div>
+            <div><b>Nationwide</b><span>Express Shipping</span></div>
+            <div><b>100%</b><span>QC Inspected</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY / NEWSLETTER -->
+    <section class="community">
+      <div class="bg" id="footerBg"></div>
+      <div class="wrap comm-inner">
+        <div class="reveal">
+          <span class="eyebrow">Join The House</span>
+          <h2>First Access<br>To Every Allocation</h2>
+          <p>Limited releases, archival windows and studio notes — direct to your inbox. No noise. Just the drop.</p>
+        </div>
+        <div class="reveal">
+          <form class="news-form" id="newsForm">
+            <input type="email" placeholder="Your email address" required>
+            <button class="btn btn-bronze" type="submit">Join The List</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
-
-  <section class="footer-cta">
-    <div class="bg" id="footerBg"></div>
-    <div class="wrap fc-inner">
-      <div class="reveal">
-        <span class="eyebrow">The List</span>
-        <h2>Get First Access<br>To Every Drop</h2>
-        <p>Limited releases, restocks and studio news. No noise — just the drop.</p>
-      </div>
-      <div class="reveal">
-        <form class="news-form" id="newsForm">
-          <input type="email" placeholder="Your email address" required>
-          <button class="btn btn-bronze" type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="wrap">
@@ -821,15 +792,15 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
             <img id="footerLogo" alt="House Aurora">
             <span class="logo-text">House Aurora</span>
           </div>
-          <p>Elevated street heritage. Curated footwear, outerwear and accessories — QC inspected and shipped express from Johannesburg.</p>
+          <p>Intentional luxury at accessible access. Curated footwear, outerwear and accessories — sourced direct, QC inspected, shipped express from Johannesburg.</p>
         </div>
         <div class="f-col">
-          <h4>Shop</h4>
+          <h4>Catalogue</h4>
           <ul>
-            <li><a data-filter="terrace" data-scroll="collections">Terrace Footwear</a></li>
-            <li><a data-filter="af1" data-scroll="collections">AF1 Vault</a></li>
-            <li><a data-filter="apparel" data-scroll="collections">Apparel &amp; Outerwear</a></li>
-            <li><a data-filter="accessories" data-scroll="collections">Luxury &amp; Slides</a></li>
+            <li><a data-filter="terrace">Terrace Footwear</a></li>
+            <li><a data-filter="af1">AF1 Vault</a></li>
+            <li><a data-filter="apparel">Apparel &amp; Outerwear</a></li>
+            <li><a data-filter="accessories">Luxury &amp; Slides</a></li>
           </ul>
         </div>
         <div class="f-col">
@@ -844,9 +815,9 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
         <div class="f-col">
           <h4>House</h4>
           <ul>
-            <li><a data-scroll="heritage">Our Heritage</a></li>
+            <li><a data-scroll="intent">Our Intent</a></li>
+            <li><a data-scroll="heritage">The House Story</a></li>
             <li><a>Contact</a></li>
-            <li><a>Location</a></li>
             <li><a>Instagram</a></li>
           </ul>
         </div>
@@ -865,18 +836,18 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   </footer>
 </div>
 
-<!-- ============ OVERLAY ============ -->
+<!-- OVERLAY -->
 <div class="overlay" id="overlay"></div>
 
-<!-- ============ CART ============ -->
+<!-- CART -->
 <aside class="cart-drawer" id="cartDrawer">
   <div class="cart-head">
-    <h3>Your Bag</h3>
+    <h3>Your Allocation</h3>
     <button class="close" id="cartClose"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
   </div>
   <div class="cart-ship">Express Delivery &amp; QC Inspection Included</div>
   <div class="cart-gift">
-    <div class="lab" id="giftLabel"><span>Spend <b>R2,500</b> more for a free gift</span><b>0%</b></div>
+    <div class="lab" id="giftLabel"><span>Spend <b>R2,500</b> more for a studio gift</span><b>0%</b></div>
     <div class="bar"><i id="giftBar"></i></div>
   </div>
   <div class="cart-items" id="cartItems"></div>
@@ -888,7 +859,7 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   </div>
 </aside>
 
-<!-- ============ QUICK VIEW ============ -->
+<!-- QUICK VIEW -->
 <div class="qv" id="qv">
   <div class="qv-box">
     <button class="qv-close" id="qvClose"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
@@ -897,7 +868,7 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   </div>
 </div>
 
-<!-- ============ MOBILE MENU ============ -->
+<!-- MOBILE MENU -->
 <aside class="mobile-menu" id="mobileMenu">
   <div class="mm-head">
     <span class="logo-text">House Aurora</span>
@@ -906,12 +877,15 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
     </button>
   </div>
   <div class="mm-body">
-    <button class="mm-link" data-filter="all">Shop All <span>→</span></button>
+    <button class="mm-link" data-filter="all">Full Catalogue <span>→</span></button>
     <button class="mm-link" data-filter="terrace">Terrace Footwear <span>→</span></button>
     <button class="mm-link" data-filter="af1">AF1 Vault <span>→</span></button>
-    <button class="mm-link" data-filter="apparel">Apparel <span>→</span></button>
+    <button class="mm-link" data-filter="airmax">Air Max Series <span>→</span></button>
+    <button class="mm-link" data-filter="activewear">Alo Activewear <span>→</span></button>
+    <button class="mm-link" data-filter="apparel">Apparel &amp; Outerwear <span>→</span></button>
     <button class="mm-link" data-filter="accessories">Luxury &amp; Slides <span>→</span></button>
-    <button class="mm-link" data-scroll="heritage">Our Heritage <span>→</span></button>
+    <button class="mm-link" data-scroll="intent">Our Intent <span>→</span></button>
+    <button class="mm-link" data-scroll="heritage">The House Story <span>→</span></button>
     <button class="mm-link" id="mmGuideFoot">Footwear Sizing <span>→</span></button>
     <button class="mm-link" id="mmGuideFit">Apparel Fit Guide <span>→</span></button>
     <button class="mm-link">Contact <span>→</span></button>
@@ -920,19 +894,19 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   <div class="mm-foot">Est. Johannesburg — 2026</div>
 </aside>
 
-<!-- ============ SEARCH ============ -->
+<!-- SEARCH -->
 <div class="search-ov" id="searchOv">
   <div class="search-inner">
     <div class="search-bar">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="text" id="searchInput" placeholder="Search products, brands, drops…" autocomplete="off">
+      <input type="text" id="searchInput" placeholder="Search the catalogue — try 'samba' or 'stüssy'…" autocomplete="off">
       <span class="esc">ESC</span>
     </div>
     <div class="search-results" id="searchResults"></div>
   </div>
 </div>
 
-<!-- ============ SIZE GUIDE ============ -->
+<!-- SIZE GUIDE -->
 <div class="sg" id="sizeGuide">
   <div class="sg-box">
     <button class="sg-close" id="sgClose" aria-label="Close">
@@ -942,10 +916,8 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   </div>
 </div>
 
-<!-- ============ TOAST ============ -->
-<div class="toast" id="toast">Added to bag</div>
+<div class="toast" id="toast">Added to allocation</div>
 
-<!-- ============ BACK TOP ============ -->
 <button class="back-top" id="backTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
@@ -1025,9 +997,53 @@ function imageBlock(base,label,opts={}){
   return wrap;
 }
 
-/* ---------- PRODUCT DATA ----------
-   slug|file|cat|brand|name|variant|drop|standard|student|badges|sizes
-*/
+/* ---------- MULTI-ANGLE GALLERY DISCOVERY ----------
+   Many products have extra photos of the same item — other angles, or
+   worn-on-model shots — saved as base.jpg, base_1.jpg, base_2.jpg, etc.
+   These belong to ONE product card, not separate products. We probe for
+   them lazily (only when a shopper hovers a card or opens quick view)
+   and cache the result per product so we never re-probe. */
+function probeImage(url){
+  return new Promise(resolve=>{
+    const im=new Image();
+    im.onload=()=>resolve(true);
+    im.onerror=()=>resolve(false);
+    im.src=url;
+  });
+}
+async function findFirstExisting(base){
+  for(const ext of EXTS){
+    const url=IMG_DIR+base+'.'+ext;
+    if(await probeImage(url))return url;
+  }
+  return null;
+}
+const galleryCache=new Map();
+function resolveProductGallery(p,cap=8){
+  if(galleryCache.has(p.id))return galleryCache.get(p.id);
+  const promise=(async()=>{
+    const cand=[];
+    if(p.slug&&String(p.slug).trim())cand.push(String(p.slug).trim());
+    variantsOf(p.file).forEach(v=>{if(!cand.includes(v))cand.push(v);});
+    let winnerBase=null,winnerUrl=null;
+    for(const c of cand){
+      const url=await findFirstExisting(c);
+      if(url){winnerBase=c;winnerUrl=url;break;}
+    }
+    if(!winnerUrl)return [];
+    const urls=[winnerUrl];
+    for(let n=1;n<=cap;n++){
+      const u=await findFirstExisting(winnerBase+'_'+n);
+      if(!u)break;
+      urls.push(u);
+    }
+    return urls;
+  })();
+  galleryCache.set(p.id,promise);
+  return promise;
+}
+
+/* ---------- PRODUCT DATA ---------- */
 const RAW=`
 adidas-forum-low-cl-mocha-cream-front|Adidas Forum Low CL – 'Mocha Cream'|terrace|Adidas|Forum Low CL|Mocha Cream|1399|1699|1259|qc|5-11
 |Adidas Forum Low CL – 'Blush Pink  Onyx'|terrace|Adidas|Forum Low CL|Blush Pink Onyx|1399|1699|1259||5-10
@@ -1092,10 +1108,37 @@ nike-x-nocta-mind-001-slide-triple-white-black-front|Nike x NOCTA Mind 001 Slide
 |Nike x NOCTA Mind 001 Slide – 'Racer Pink  Hot Crimson'|accessories|Nike x NOCTA|Mind 001 Slide|Racer Pink Hot Crimson|999|1299|899|lim|6-10
 nike-asuna-2-slide-soft-pink-coconut-milk-front|Nike Asuna 2 Slide – 'Soft Pink  Coconut Milk'|accessories|Nike|Asuna 2 Slide|Soft Pink Coconut Milk|699|899|629||5-10
 |Nike Asuna 2 Slide – 'Core Black  Off-White'|accessories|Nike|Asuna 2 Slide|Core Black Off-White|699|899|629|qc|6-11
+adidas_adimatic_low_brown_cream_beige_skate_shoes|adidas Adimatic Low – 'Brown Cream Beige'|terrace|adidas|Adimatic Low|Brown Cream Beige|1299|1599|1169|qc|5-11
+adidas_grand_court_base_00s_purple_white_gum_sole|adidas Grand Court Base 00s – 'Purple White Gum'|terrace|adidas|Grand Court Base 00s|Purple White Gum|899|1099|799|qc|5-11
+adidas_originals_bermuda_suede_maroon_burgundy|adidas Originals Bermuda Suede – 'Maroon Burgundy'|terrace|adidas Originals|Bermuda Suede|Maroon Burgundy|1199|1499|1079|qc|5-11
+adidas_originals_sambarose_lilac_pink_translucent_platform_sole_heart_detail|adidas Originals Sambarose – 'Lilac Heart Platform'|terrace|adidas Originals|Sambarose Platform|Lilac Pink Translucent Heart|1299|1599|1169|lim|4-9
+bad_bunny_adidas_gazelle_indoor_san_juan_light_blue_gum_sole|Bad Bunny x adidas Gazelle Indoor – 'San Juan'|terrace|Bad Bunny x adidas|Gazelle Indoor|San Juan Light Blue Gum|2499|2999|2299|lim,qc|5-12
+alo_yoga_airlift_suit_up_bra|Alo Yoga Airlift Suit Up Bra – 'White'|activewear|Alo Yoga|Airlift Suit Up Bra|White|799|999|719|qc|XS-XL
+alo_yoga_airlift_suit_up_bra_in_steel_blue_slate_blue|Alo Yoga Airlift Suit Up Bra – 'Steel Blue'|activewear|Alo Yoga|Airlift Suit Up Bra|Steel Blue Slate|799|999|719|qc|XS-XL
+alo_yoga_airlift_suit_up_bra_or_airbrush_streamlined_super_sleek_contrast_style_variant|Alo Yoga Airlift Suit Up Bra – 'Airbrush Contrast'|activewear|Alo Yoga|Airlift Suit Up Bra|Airbrush Streamlined Contrast|799|999|719|lim|XS-XL
+alo_yoga_suit_up_high_waist_flare_legging|Alo Yoga Suit Up High-Waist Flare Legging – 'Black'|activewear|Alo Yoga|Suit Up High-Waist Flare Legging|Black|1199|1499|1079|qc|XS-XL
+alo_yoga_suit_up_high_waist_flare_legging_in_steel_blue_slate_blue|Alo Yoga Suit Up High-Waist Flare Legging – 'Steel Blue'|activewear|Alo Yoga|Suit Up High-Waist Flare Legging|Steel Blue Slate|1199|1499|1079|qc|XS-XL
+alo_yoga_suit_up_high_waist_flare_legging_or_suit_up_bootcut|Alo Yoga Suit Up Bootcut Legging|activewear|Alo Yoga|Suit Up High-Waist Bootcut Legging|Flare / Bootcut|1199|1499|1079||XS-XL
+alo_yoga_suit_up_motivate_full_zip_track_jacket|Alo Yoga Suit Up Motivate Full-Zip Jacket|activewear|Alo Yoga|Suit Up Motivate Full-Zip Track Jacket|Signature Contrast|1399|1699|1259|qc|XS-XL
+alo_yoga_suit_up_motivate_full_zip_track_jacket_in_the_steel_blue_slate_blue|Alo Yoga Suit Up Motivate Full-Zip Jacket – 'Steel Blue'|activewear|Alo Yoga|Suit Up Motivate Full-Zip Track Jacket|Steel Blue Slate|1399|1699|1259|qc|XS-XL
+alo_yoga_suit_up_motivate_full_zip_track_jacket_in_white_with_black_contrast_piping|Alo Yoga Suit Up Motivate Full-Zip Jacket – 'White / Black'|activewear|Alo Yoga|Suit Up Motivate Full-Zip Track Jacket|White with Black Contrast Piping|1399|1699|1259|lim|XS-XL
+nike_air_max_270_premium_sail_light_orewood_brown_metallic_bronze|Nike Air Max 270 Premium – 'Sail / Metallic Bronze'|airmax|Nike|Air Max 270 Premium|Sail Light Orewood Brown Metallic Bronze|1599|1999|1439|qc|5-12
+nike_air_max_95_black_grey_blue_accent|Nike Air Max 95 – 'Black Grey Blue'|airmax|Nike|Air Max 95|Black Grey Blue Accent|1699|2099|1529|qc|5-12
+nike_air_max_95_brown_dark_mocha|Nike Air Max 95 – 'Dark Mocha'|airmax|Nike|Air Max 95|Brown Dark Mocha|1699|2099|1529|qc|5-12
+nike_air_max_95_grey_black_gradient|Nike Air Max 95 – 'Grey Black Gradient'|airmax|Nike|Air Max 95|Grey Black Gradient|1699|2099|1529|qc|5-12
+nike_air_max_95_grey_pink_accent|Nike Air Max 95 – 'Grey Pink'|airmax|Nike|Air Max 95|Grey Pink Accent|1699|2099|1529|lim|5-12
+nike_air_max_95_tt_black_cannon_grass_green|Nike Air Max 95 TT – 'Grass Green'|airmax|Nike|Air Max 95 TT|Black Cannon Grass Green|1699|2099|1529|lim|5-12
 `.trim();
 
-const BADGE_MAP={qc:'QC Inspected',lim:'Limited Drop',exp:'Express Delivery'};
-const CAT_LABEL={terrace:'Terrace Footwear',af1:'AF1 Vault',apparel:'Apparel & Outerwear',accessories:'Luxury & Slides'};
+const BADGE_MAP={qc:'QC Inspected',lim:'Limited Allocation',exp:'Express Delivery'};
+const CAT_LABEL={
+  terrace:'Terrace Footwear',
+  af1:'AF1 Vault',
+  apparel:'Apparel & Outerwear',
+  accessories:'Luxury & Slides',
+  airmax:'Air Max Series',
+  activewear:'Alo Activewear'
+};
 
 function expandSizes(code){
   if(!code||code==='OS')return['One Size'];
@@ -1118,9 +1161,9 @@ const PRODUCTS=RAW.split('\n').map((line,i)=>{
   };
 });
 
-const badgeClass=b=>b==='Limited Drop'?'p-badge dark':'p-badge';
+const badgeClass=b=>b==='Limited Allocation'?'p-badge dark':'p-badge';
 
-/* Deterministic stock per product */
+/* Deterministic stock */
 const STOCK={};
 PRODUCTS.forEach(p=>{
   let h=0;
@@ -1345,12 +1388,10 @@ function injectStaticImages(){
     el.style.inset='0';
     el.appendChild(buildImg(file,label));
   });
-
   ['hero_banner_1','hero_banner_2','hero_banner_3'].forEach((f,i)=>{
     const hm=document.getElementById('hm'+(i+1));
     if(hm)hm.appendChild(buildImg(f,'Hero '+(i+1),{eager:true}));
   });
-
   const fb=document.getElementById('footerBg');
   if(fb){
     const base=IMG_DIR+'footer-banner-bg';
@@ -1360,7 +1401,6 @@ function injectStaticImages(){
     probe.onerror=()=>{i++;if(i<EXTS.length)probe.src=base+'.'+EXTS[i];};
     probe.src=base+'.'+EXTS[0];
   }
-
   const hl=document.getElementById('headerLogo');
   const fl=document.getElementById('footerLogo');
   if(hl)hl.replaceWith(buildImg('logo_transparent','House Aurora',{eager:true}));
@@ -1381,12 +1421,10 @@ function toggleFav(id){
 /* ---------- PRODUCT GRID ---------- */
 const grid=$('#prodGrid');
 const prodCount=$('#prodCount');
-let currentFilter='all';
 
 function renderGrid(filter='all'){
-  currentFilter=filter;
   const list=filter==='all'?PRODUCTS:PRODUCTS.filter(p=>p.cat===filter);
-  prodCount.innerHTML=`Showing <b>${list.length}</b> product${list.length!==1?'s':''}${filter!=='all'?` — ${CAT_LABEL[filter]}`:''}`;
+  prodCount.innerHTML=`Showing <b>${list.length}</b> piece${list.length!==1?'s':''}${filter!=='all'?` — ${CAT_LABEL[filter]}`:''}`;
   grid.innerHTML='';
 
   list.forEach((p,i)=>{
@@ -1423,7 +1461,7 @@ function renderGrid(filter='all'){
 
     const quick=document.createElement('div');
     quick.className='p-quick';
-    quick.textContent='Quick View';
+    quick.textContent='View Piece';
     media.appendChild(quick);
 
     const info=document.createElement('div');
@@ -1442,39 +1480,66 @@ function renderGrid(filter='all'){
     card.appendChild(media);
     card.appendChild(info);
     card.addEventListener('click',()=>openQuick(p.id));
+
+    /* Hover swap to a second angle, if this product has one */
+    let hoverImg=null,hoverChecked=false,hovering=false;
+    media.addEventListener('mouseenter',async()=>{
+      hovering=true;
+      if(!hoverChecked){
+        hoverChecked=true;
+        const urls=await resolveProductGallery(p);
+        if(urls.length>1){
+          hoverImg=document.createElement('img');
+          hoverImg.src=urls[1];
+          hoverImg.alt=p.brand+' '+p.name+' — alternate angle';
+          hoverImg.loading='lazy';
+          hoverImg.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s ease,transform 1s var(--ease);z-index:2;pointer-events:none';
+          media.appendChild(hoverImg);
+          if(hovering)requestAnimationFrame(()=>{hoverImg.style.opacity='1';});
+        }
+      } else if(hoverImg){
+        hoverImg.style.opacity='1';
+      }
+    });
+    media.addEventListener('mouseleave',()=>{
+      hovering=false;
+      if(hoverImg)hoverImg.style.opacity='0';
+    });
+
     grid.appendChild(card);
   });
 }
 
 renderGrid();
 
+/* Unified filter routing — one function, all triggers */
+function setFilter(f){
+  $$('#tabs .tab').forEach(x=>x.classList.toggle('active',x.dataset.filter===f));
+  renderGrid(f);
+}
+
 $$('#tabs .tab').forEach(t=>{
-  t.addEventListener('click',()=>{
-    $$('#tabs .tab').forEach(x=>x.classList.remove('active'));
-    t.classList.add('active');
-    renderGrid(t.dataset.filter);
-  });
+  t.addEventListener('click',()=>setFilter(t.dataset.filter));
 });
 
-/* Filter links */
+/* All [data-filter] links (nav, hero, pillars, footer) */
 $$('[data-filter]').forEach(el=>{
   if(el.closest('#tabs'))return;
   el.addEventListener('click',e=>{
     const f=el.dataset.filter;
     if(!f)return;
     e.preventDefault();
-    $$('#tabs .tab').forEach(x=>x.classList.toggle('active',x.dataset.filter===f));
-    renderGrid(f);
-    $('#collections').scrollIntoView({behavior:'smooth',block:'start'});
+    setFilter(f);
+    const cat=document.getElementById('catalogue');
+    if(cat)cat.scrollIntoView({behavior:'smooth',block:'start'});
   });
 });
 
-/* Scroll-only links */
+/* All [data-scroll] links */
 $$('[data-scroll]').forEach(el=>{
   el.addEventListener('click',e=>{
     e.preventDefault();
-    const target=el.dataset.scroll;
-    const t=document.getElementById(target);
+    const t=document.getElementById(el.dataset.scroll);
     if(t)t.scrollIntoView({behavior:'smooth'});
   });
 });
@@ -1482,6 +1547,63 @@ $$('[data-scroll]').forEach(el=>{
 /* ---------- QUICK VIEW ---------- */
 const qv=$('#qv');
 let qvProduct=null,qvSize=null;
+let qvGalleryUrls=[],qvGalleryIdx=0;
+
+function showQvImage(idx){
+  if(!qvGalleryUrls.length)return;
+  qvGalleryIdx=(idx+qvGalleryUrls.length)%qvGalleryUrls.length;
+  const img=$('#qvMedia .qv-main-img');
+  if(img){
+    img.style.opacity='0';
+    setTimeout(()=>{
+      if(!$('#qvMedia .qv-main-img'))return; // quick view closed/changed meanwhile
+      img.src=qvGalleryUrls[qvGalleryIdx];
+    },200);
+  }
+  $$('#qvMedia .qv-dot').forEach((d,i)=>d.classList.toggle('on',i===qvGalleryIdx));
+}
+
+function buildQvGalleryUI(urls){
+  const media=$('#qvMedia');
+  $$('#qvMedia .qv-arrow,#qvMedia .qv-dots').forEach(el=>el.remove());
+  if(urls.length<2)return;
+
+  const prev=document.createElement('button');
+  prev.className='qv-arrow qv-arrow-prev';
+  prev.setAttribute('aria-label','Previous angle');
+  prev.innerHTML='‹';
+  prev.addEventListener('click',e=>{e.stopPropagation();showQvImage(qvGalleryIdx-1);});
+
+  const next=document.createElement('button');
+  next.className='qv-arrow qv-arrow-next';
+  next.setAttribute('aria-label','Next angle');
+  next.innerHTML='›';
+  next.addEventListener('click',e=>{e.stopPropagation();showQvImage(qvGalleryIdx+1);});
+
+  const dots=document.createElement('div');
+  dots.className='qv-dots';
+  urls.forEach((u,i)=>{
+    const d=document.createElement('button');
+    d.className='qv-dot'+(i===0?' on':'');
+    d.setAttribute('aria-label','View angle '+(i+1));
+    d.addEventListener('click',e=>{e.stopPropagation();showQvImage(i);});
+    dots.appendChild(d);
+  });
+
+  media.appendChild(prev);
+  media.appendChild(next);
+  media.appendChild(dots);
+
+  /* swipe support */
+  let touchX=null;
+  media.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
+  media.addEventListener('touchend',e=>{
+    if(touchX==null)return;
+    const dx=e.changedTouches[0].clientX-touchX;
+    if(Math.abs(dx)>40)showQvImage(qvGalleryIdx+(dx<0?1:-1));
+    touchX=null;
+  });
+}
 
 function openQuick(id){
   const p=PRODUCTS.find(x=>x.id===id);
@@ -1490,7 +1612,16 @@ function openQuick(id){
 
   const media=$('#qvMedia');
   media.innerHTML='';
-  media.appendChild(imageBlock(p.file,p.brand+' '+p.name,{slug:p.slug,eager:true}));
+  const mediaBlock=imageBlock(p.file,p.brand+' '+p.name,{slug:p.slug,eager:true});
+  mediaBlock.querySelector('img').classList.add('qv-main-img');
+  media.appendChild(mediaBlock);
+
+  qvGalleryUrls=[];qvGalleryIdx=0;
+  resolveProductGallery(p).then(urls=>{
+    if(qvProduct!==p)return; // quick view moved on to another product meanwhile
+    qvGalleryUrls=urls;
+    buildQvGalleryUI(urls);
+  });
 
   $('#qvBody').innerHTML=`
     <span class="eyebrow">${CAT_LABEL[p.cat]}</span>
@@ -1500,9 +1631,9 @@ function openQuick(id){
       <span class="qv-drop">${money(p.price)}</span>
       ${p.old?`<span class="qv-std">${money(p.old)}</span>`:''}
     </div>
-    ${p.student?`<div class="qv-student">Student Price <b>${money(p.student)}</b> — 10% extra off verified</div>`:''}
-    <div class="stock">Only ${STOCK[p.id]} left in stock</div>
-    <p class="qv-desc">Premium construction, sourced and QC inspected in the House Aurora studio. Ships express nationwide in signature bronze-foil packaging.</p>
+    ${p.student?`<div class="qv-student">Student Access <b>${money(p.student)}</b> — 10% extra off verified</div>`:''}
+    <div class="stock">Only ${STOCK[p.id]} available in this allocation</div>
+    <p class="qv-desc">Sourced direct, inspected in the House Aurora studio, and shipped express nationwide in signature bronze-foil packaging.</p>
     <span class="qv-label">Select Size</span>
     <div class="sizes" id="qvSizes">
       ${p.sizes.map(s=>`<button class="size" data-size="${s}">${s}</button>`).join('')}
@@ -1510,11 +1641,11 @@ function openQuick(id){
     <div class="qv-badges">
       <span class="p-badge">QC Inspected</span>
       <span class="p-badge">Express Delivery</span>
-      ${p.badges.includes('Limited Drop')?'<span class="p-badge dark">Limited Drop</span>':''}
+      ${p.badges.includes('Limited Allocation')?'<span class="p-badge dark">Limited Allocation</span>':''}
       ${p.student?'<span class="p-badge student">Student</span>':''}
     </div>
     <div class="qv-actions">
-      <button class="btn btn-bronze" id="qvAdd">Add To Bag</button>
+      <button class="btn btn-bronze" id="qvAdd">Add To Allocation</button>
       <button class="btn btn-outline" id="qvGuide">Size Guide</button>
     </div>
   `;
@@ -1527,7 +1658,7 @@ function openQuick(id){
     });
   });
 
-  $('#qvAdd').addEventListener('click',()=>{
+    $('#qvAdd').addEventListener('click',()=>{
     if(!qvSize){toast('Please select a size');return;}
     addToCart(p,qvSize);
     closeQuick();
@@ -1561,7 +1692,7 @@ function addToCart(p,size){
   if(existing)existing.qty++;
   else cart.push({key,id:p.id,size,qty:1});
   saveCart();renderCart();
-  toast(p.name+' added to bag');
+  toast(p.name+' added to allocation');
   openCart();
 }
 function changeQty(key,delta){
@@ -1582,9 +1713,9 @@ function updateGiftBar(){
   const pct=Math.min(100,(t/GIFT_THRESHOLD)*100);
   bar.style.width=pct+'%';
   if(t>=GIFT_THRESHOLD){
-    label.innerHTML='<span>Free gift unlocked</span><b>✦ Complimentary Beanie</b>';
+    label.innerHTML='<span>Studio gift unlocked</span><b>✦ Complimentary Beanie</b>';
   } else {
-    label.innerHTML=`<span>Spend <b>${money(GIFT_THRESHOLD-t)}</b> more for a free gift</span><b>${Math.round(pct)}%</b>`;
+    label.innerHTML=`<span>Spend <b>${money(GIFT_THRESHOLD-t)}</b> more for a studio gift</span><b>${Math.round(pct)}%</b>`;
   }
 }
 
@@ -1598,13 +1729,13 @@ function renderCart(){
     items.innerHTML=`
       <div class="cart-empty">
         <div class="mark">HA</div>
-        <p>Your bag is empty</p>
-        <button class="btn btn-outline" id="emptyShopBtn">Shop The Drop</button>
+        <p>Your allocation is empty</p>
+        <button class="btn btn-outline" id="emptyShopBtn">Browse The Catalogue</button>
       </div>`;
     $('#cartFoot').style.display='none';
     updateGiftBar();
     const b=$('#emptyShopBtn');
-    if(b)b.addEventListener('click',()=>{closeCart();$('#collections').scrollIntoView({behavior:'smooth'});});
+    if(b)b.addEventListener('click',()=>{closeCart();$('#catalogue').scrollIntoView({behavior:'smooth'});});
     return;
   }
 
@@ -1675,12 +1806,13 @@ $('#checkoutBtn').addEventListener('click',()=>{
 });
 renderCart();
 
-/* ---------- FLASH DROP ---------- */
+/* ---------- TIMED ARCHIVAL ALLOCATION ---------- */
 (function(){
-  const KEY='ha_drop_end';
+  const KEY='ha_alloc_end';
   let end=+localStorage.getItem(KEY);
   if(!end||end<Date.now()){end=Date.now()+3*24*60*60*1000;try{localStorage.setItem(KEY,end);}catch(e){}}
-  const D=$('#fdD'),H=$('#fdH'),M=$('#fdM'),S=$('#fdS');
+  const D=$('#adD'),H=$('#adH'),M=$('#adM'),S=$('#adS');
+  if(!D)return;
   function tick(){
     const ms=Math.max(0,end-Date.now());
     D.textContent=String(Math.floor(ms/86400000)).padStart(2,'0');
@@ -1690,7 +1822,7 @@ renderCart();
   }
   tick();setInterval(tick,1000);
 
-  const visual=$('#fdVisual');
+  const visual=$('#allocVisual');
   if(!visual)return;
   const feature=PRODUCTS.find(p=>p.slug==='nike-af1-low-07-lv8-x-stussy-dice-off-white-black-front')
               ||PRODUCTS.find(p=>p.cat==='af1');
@@ -1699,7 +1831,7 @@ renderCart();
   visual.appendChild(imageBlock(feature.file,feature.brand+' '+feature.name,{slug:feature.slug,eager:true}));
 
   const info=document.createElement('div');
-  info.className='fd-info';
+  info.className='alloc-info';
   info.innerHTML=`
     <div>
       <h4>${feature.brand}</h4>
@@ -1709,47 +1841,6 @@ renderCart();
   `;
   visual.appendChild(info);
   visual.addEventListener('click',()=>openQuick(feature.id));
-})();
-
-/* ---------- DEALS RAIL ---------- */
-(function(){
-  const rail=$('#dealsRail');
-  if(!rail)return;
-  const deals=PRODUCTS
-    .filter(p=>p.old&&p.old>p.price)
-    .map(p=>({p,pct:Math.round((1-p.price/p.old)*100)}))
-    .sort((a,b)=>b.pct-a.pct)
-    .slice(0,10);
-
-  if(!deals.length){rail.closest('.deals').style.display='none';return;}
-
-  deals.forEach(({p,pct},i)=>{
-    const card=document.createElement('article');
-    card.className='deal-card';
-    card.style.animation=`cardIn .5s var(--ease) ${i*40}ms backwards`;
-    card.dataset.id=p.id;
-
-    const media=document.createElement('div');
-    media.className='deal-media';
-    media.appendChild(imageBlock(p.file,p.brand+' '+p.name,{slug:p.slug}));
-    const tag=document.createElement('span');
-    tag.className='deal-pct';
-    tag.textContent='−'+pct+'%';
-    media.appendChild(tag);
-
-    const body=document.createElement('div');
-    body.className='deal-body';
-    body.innerHTML=`
-      <span class="b">${p.brand}</span>
-      <h4>${p.name}</h4>
-      <div class="v">${p.variant}</div>
-      <div class="pr"><b>${money(p.price)}</b><s>${money(p.old)}</s></div>
-    `;
-
-    card.append(media,body);
-    card.addEventListener('click',()=>openQuick(p.id));
-    rail.appendChild(card);
-  });
 })();
 
 /* ---------- MOBILE MENU ---------- */
@@ -1769,10 +1860,9 @@ renderCart();
     if(l.dataset.filter){
       l.addEventListener('click',()=>{
         const f=l.dataset.filter;
-        $$('#tabs .tab').forEach(x=>x.classList.toggle('active',x.dataset.filter===f));
-        renderGrid(f);
+        setFilter(f);
         close();
-        setTimeout(()=>$('#collections').scrollIntoView({behavior:'smooth'}),120);
+        setTimeout(()=>$('#catalogue').scrollIntoView({behavior:'smooth'}),120);
       });
     } else if(l.dataset.scroll){
       l.addEventListener('click',()=>{
@@ -1822,7 +1912,7 @@ function renderSearchResults(q){
 
   searchResults.classList.add('on');
   if(!hits.length){
-    searchResults.innerHTML='<div class="sr-empty">No matches — try "samba" or "af1"</div>';
+    searchResults.innerHTML='<div class="sr-empty">No matches — try "samba" or "stüssy"</div>';
     return;
   }
   searchResults.innerHTML='';
@@ -1935,7 +2025,7 @@ function toast(msg){
 /* ---------- NEWSLETTER ---------- */
 $('#newsForm').addEventListener('submit',e=>{
   e.preventDefault();e.target.reset();
-  toast('Welcome to the list');
+  toast('Welcome to the house');
 });
 
 /* ---------- SCROLL REVEAL ---------- */
@@ -1968,6 +2058,10 @@ document.addEventListener('keydown',e=>{
     if($('#sizeGuide').classList.contains('on'))$('#sgClose').click();
     if($('#mobileMenu').classList.contains('on'))$('#mmClose').click();
     if($('#soundWrap').classList.contains('open'))$('#soundWrap').classList.remove('open');
+  }
+  if(qv.classList.contains('on')&&qvGalleryUrls.length>1){
+    if(e.key==='ArrowLeft')showQvImage(qvGalleryIdx-1);
+    if(e.key==='ArrowRight')showQvImage(qvGalleryIdx+1);
   }
 });
 </script>
