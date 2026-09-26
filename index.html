@@ -716,7 +716,7 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 <!-- SPLASH -->
 <div id="splash">
   <div class="splash-backdrop"></div>
-  <video id="splashVideo" muted playsinline preload="auto"></video>
+  <img id="splashVideo" alt="" />
   <div class="splash-vignette"></div>
   <div class="splash-wordmark">House Aurora — Est. Johannesburg</div>
   <div class="splash-logo" id="splashLogo">
@@ -848,9 +848,9 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
     <!-- MOBILE BANNER CAROUSEL (portrait mobile only) -->
     <div class="mobile-banners" id="mobileBanners" aria-label="Mobile promotional banners">
       <div class="mb-track" id="mbTrack">
-        <div class="mb-slide"><img src="assets/products/banner_mobile_1.png" alt="House Aurora — New Drops" loading="eager"></div>
-        <div class="mb-slide"><img src="assets/products/banner_mobile_2.png" alt="25% Student Discount" loading="lazy"></div>
-        <div class="mb-slide"><img src="assets/products/banner_mobile_3.png" alt="Exclusive Tier Drops" loading="lazy"></div>
+        <div class="mb-slide"><img src="assets/products/banner_mobile_1.webp" alt="House Aurora — New Drops" loading="eager"></div>
+        <div class="mb-slide"><img src="assets/products/banner_mobile_2.webp" alt="25% Student Discount" loading="lazy"></div>
+        <div class="mb-slide"><img src="assets/products/banner_mobile_3.webp" alt="Exclusive Tier Drops" loading="lazy"></div>
       </div>
       <div class="mb-dots" id="mbDots">
         <button class="mb-dot on" data-i="0" aria-label="Banner 1"></button>
@@ -1052,7 +1052,7 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 
     <!-- BOTTOM CONVERSION BANNER -->
     <div class="bottom-banner">
-      <img src="assets/products/bottom_banner_1.png" alt="House Aurora — 50% deposit, QC inspected, express delivery" loading="lazy">
+      <img src="assets/products/bottom_banner_1.webp" alt="House Aurora — 50% deposit, QC inspected, express delivery" loading="lazy">
       <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(26,24,23,.7) 0%,transparent 50%,rgba(26,24,23,.7) 100%)"></div>
     </div>
 
@@ -1657,36 +1657,28 @@ PRODUCTS.forEach(p=>{
   STOCK[p.id]=(h%8)+2;
 });
 
-/* ---------- SPLASH ---------- */
-const SPLASH_VIDS=['vid4'];
+/* ---------- SPLASH (Image Version) ---------- */
+const SPLASH_IMGS=['vid4'];
 const SPLASH_MIN=5200;
 const splashStart=Date.now();
 const splash=$('#splash');
 const splashVid=$('#splashVideo');
 const splashDots=$$('#splashProgress i');
 let splashDone=false;
+let splashTimer;
 
 function setDot(i){splashDots.forEach((d,k)=>d.classList.toggle('on',k<=i));}
 function playClip(i){
-  if(i>=SPLASH_VIDS.length){finishSplash();return;}
+  if(splashDone||i>=SPLASH_IMGS.length){finishSplash();return;}
   setDot(i);
-  let settled=false;
-  const finish=()=>{
-    if(settled)return;settled=true;
-    clearTimeout(timer);
-    splashVid.onended=null;splashVid.onerror=null;
-    playClip(i+1);
-  };
-  const timer=setTimeout(finish,10000); // safety net if vid4 stalls
-  splashVid.onended=finish;
-  splashVid.onerror=finish;
-  splashVid.src=VIDEO_DIR+SPLASH_VIDS[i]+'.mp4';
+  splashVid.src=VIDEO_DIR+SPLASH_IMGS[i]+'.webp';
   splashVid.style.opacity='1';
-  const p=splashVid.play();
-  if(p&&p.catch)p.catch(()=>{});
+  clearTimeout(splashTimer);
+  splashTimer=setTimeout(()=>playClip(i+1),3000);
 }
 function finishSplash(){
   if(splashDone)return;splashDone=true;
+  clearTimeout(splashTimer);
   const wait=Math.max(0,SPLASH_MIN-(Date.now()-splashStart));
   setTimeout(revealLogo,wait);
 }
@@ -1712,7 +1704,7 @@ function enterSite(){
 }
 $('#splashSkip').addEventListener('click',()=>{
   splashDone=true;
-  try{splashVid.pause();}catch(e){}
+  clearTimeout(splashTimer);
   revealLogo();
 });
 if(document.readyState==='complete')playClip(0);
