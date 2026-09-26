@@ -119,10 +119,10 @@ header.dark .burger{color:var(--oatmeal)}
 
 /* ============ HERO ============ */
 .hero{position:relative;height:clamp(560px,86vh,900px);background:var(--slate);overflow:hidden}
-.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s var(--ease);pointer-events:none}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 2.2s var(--ease);pointer-events:none}
 .hero-slide.active{opacity:1;pointer-events:auto}
 .hero-media{position:absolute;inset:0;background:linear-gradient(120deg,#2B1E1A 0%,#3d2b22 40%,#1A1817 100%);overflow:hidden}
-.hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 8s linear;opacity:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 14s linear;opacity:0}
 .hero-slide.active .hero-media img{transform:scale(1.14);opacity:1}
 .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(26,24,23,.86) 0%,rgba(26,24,23,.5) 45%,rgba(26,24,23,.18) 100%),linear-gradient(to top,rgba(26,24,23,.7) 0%,transparent 45%)}
 .hero-media::before{content:'';position:absolute;inset:0;z-index:2;background-image:var(--grain);opacity:.16;mix-blend-mode:overlay;pointer-events:none}
@@ -141,7 +141,7 @@ header.dark .burger{color:var(--oatmeal)}
 .hero-dots{display:flex;gap:14px;align-items:center}
 .hero-dots button{width:44px;height:2px;background:rgba(229,218,203,.26);position:relative;overflow:hidden;transition:background .4s;padding:0}
 .hero-dots button.active{background:rgba(229,218,203,.22)}
-.hero-dots button.active::after{content:'';position:absolute;inset:0;background:var(--bronze);transform-origin:left;animation:dotFill 7s linear forwards}
+.hero-dots button.active::after{content:'';position:absolute;inset:0;background:var(--bronze);transform-origin:left;animation:dotFill 12s linear forwards}
 @keyframes dotFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .hero-arrows{display:flex;gap:.7rem}
 .hero-arrows button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(229,218,203,.28);display:grid;place-items:center;color:var(--cream);transition:all .4s var(--ease);padding:0}
@@ -445,6 +445,75 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 .back-top:hover{background:var(--bronze);color:var(--slate);transform:translateY(-3px)}
 .back-top svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
+/* ============ MOBILE BANNER CAROUSEL ============ */
+.mobile-banners{display:none;position:relative;overflow:hidden;background:var(--slate)}
+@media(max-width:640px){.mobile-banners{display:block}}
+.mb-track{display:flex;transition:transform 2.2s var(--ease)}
+.mb-slide{flex:0 0 100%;position:relative}
+.mb-slide img{width:100%;display:block;max-height:420px;object-fit:cover}
+.mb-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:4}
+.mb-dot{width:22px;height:2px;border-radius:2px;background:rgba(229,218,203,.3);border:none;padding:0;cursor:pointer;transition:all .5s var(--ease)}
+.mb-dot.on{background:var(--bronze);width:32px}
+
+/* ============ ORIENTATION LOCK ============ */
+#orientLock{display:none;position:fixed;inset:0;z-index:9998;background:var(--slate);align-items:center;justify-content:center;flex-direction:column;gap:1.6rem;text-align:center;padding:2rem}
+@media(max-height:500px) and (orientation:landscape){
+  #orientLock{display:flex}
+}
+.ol-icon{font-size:3.2rem;animation:rotateHint 2.4s ease-in-out infinite}
+@keyframes rotateHint{0%,100%{transform:rotate(0deg)}40%{transform:rotate(90deg)}60%{transform:rotate(90deg)}}
+.ol-title{font-family:var(--serif);font-size:1.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze-lt)}
+.ol-text{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(229,218,203,.5)}
+
+/* ============ POLICY BADGES ============ */
+.policy-strip{background:var(--oatmeal);border-top:1px solid rgba(43,30,26,.08);border-bottom:1px solid rgba(43,30,26,.08);padding:2.2rem 0}
+.policy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1560px;margin:0 auto;padding:0 2.4rem}
+.policy-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.7rem;cursor:pointer;transition:transform .4s var(--ease)}
+.policy-item:hover{transform:translateY(-3px)}
+.policy-icon{width:48px;height:48px;border-radius:50%;background:var(--espresso);display:grid;place-items:center;color:var(--bronze-lt);font-size:1.3rem;flex-shrink:0;transition:background .4s var(--ease)}
+.policy-item:hover .policy-icon{background:var(--bronze)}
+.policy-item h4{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--espresso);margin:0}
+.policy-item p{font-size:.7rem;color:rgba(43,30,26,.55);line-height:1.6;font-weight:300;max-width:180px;margin:0}
+
+/* ============ STUDENT DISCOUNT BANNER ============ */
+.student-band{background:linear-gradient(135deg,#2B1E1A 0%,#1A1817 100%);padding:3.2rem 0;position:relative;overflow:hidden}
+.student-band::before{content:'';position:absolute;inset:0;background-image:var(--grain);opacity:.14;mix-blend-mode:overlay;pointer-events:none}
+.student-band::after{content:'';position:absolute;right:-5%;top:-20%;width:40%;height:140%;background:radial-gradient(circle,rgba(176,139,103,.18) 0%,transparent 60%);pointer-events:none}
+.sb-inner{max-width:1560px;margin:0 auto;padding:0 2.4rem;position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.sb-copy .eyebrow{display:block;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze);margin-bottom:.8rem}
+.sb-copy h3{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.2rem);letter-spacing:.14em;text-transform:uppercase;color:var(--cream);font-weight:300;line-height:1.14}
+.sb-copy p{font-size:.82rem;color:rgba(229,218,203,.6);margin-top:.6rem;font-weight:300}
+.sb-badge{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.sb-pct{font-family:var(--serif);font-size:clamp(3rem,7vw,5.5rem);font-weight:300;color:var(--bronze-lt);line-height:1;letter-spacing:.04em}
+.sb-pct span{font-size:clamp(.8rem,2vw,1.2rem);letter-spacing:.3em;text-transform:uppercase;display:block;margin-top:.3rem;color:rgba(229,218,203,.55)}
+
+/* ============ DEPOSIT POLICY MODAL ============ */
+.dep-modal{position:fixed;inset:0;z-index:260;display:grid;place-items:center;padding:1.5rem;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s;background:rgba(26,24,23,.65);backdrop-filter:blur(8px)}
+.dep-modal.on{opacity:1;visibility:visible}
+.dep-box{background:var(--cream);border-radius:16px;width:min(580px,100%);max-height:88vh;overflow-y:auto;padding:2.8rem 2.4rem;position:relative;transform:translateY(24px) scale(.97);transition:transform .55s var(--ease);box-shadow:0 40px 100px rgba(26,24,23,.45)}
+.dep-modal.on .dep-box{transform:none}
+.dep-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;transition:all .3s;padding:0;background:rgba(43,30,26,.06)}
+.dep-close:hover{background:var(--espresso);color:var(--cream);transform:rotate(90deg)}
+.dep-close svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round}
+.dep-box .eyebrow{display:block;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--bronze);margin-bottom:.9rem}
+.dep-box h3{font-family:var(--serif);font-size:1.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400;margin-bottom:1.2rem}
+.dep-steps{display:flex;flex-direction:column;gap:1.2rem;margin:1.6rem 0}
+.dep-step{display:flex;align-items:flex-start;gap:1.2rem;padding:1.2rem;border:1px solid rgba(43,30,26,.1);border-radius:10px;transition:border-color .35s}
+.dep-step:hover{border-color:var(--bronze)}
+.dep-num{width:36px;height:36px;border-radius:50%;background:var(--espresso);color:var(--bronze-lt);font-family:var(--serif);font-size:1.05rem;display:grid;place-items:center;flex-shrink:0}
+.dep-step-body h4{font-size:.8rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.3rem}
+.dep-step-body p{font-size:.78rem;color:rgba(43,30,26,.6);line-height:1.7;font-weight:300}
+.dep-note{font-size:.72rem;color:rgba(43,30,26,.5);line-height:1.7;border-top:1px solid rgba(43,30,26,.08);padding-top:1.2rem;margin-top:.4rem}
+
+/* ============ CHECKOUT DEPOSIT PANEL ============ */
+.checkout-deposit{margin:1rem 1.8rem;background:rgba(176,139,103,.1);border:1px solid rgba(176,139,103,.3);border-radius:10px;padding:1.1rem 1.3rem}
+.cd-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.cd-label{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze-dk);font-weight:500}
+.cd-toggle{display:flex;gap:.4rem;background:rgba(43,30,26,.08);border-radius:999px;padding:.24rem}
+.cd-opt{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;padding:.55em 1.1em;border-radius:999px;transition:all .35s var(--ease);border:none;cursor:pointer;background:none;color:rgba(43,30,26,.55);font-weight:500}
+.cd-opt.on{background:var(--espresso);color:var(--bronze-lt)}
+.cd-note{font-size:.66rem;color:rgba(43,30,26,.55);line-height:1.6;margin-top:.6rem;font-weight:300}
+
 /* ============ RESPONSIVE ============ */
 @media(max-width:1180px){
   .prod-grid{grid-template-columns:repeat(3,1fr)}
@@ -477,13 +546,23 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
   .prod-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem .9rem}
   .pillar-grid{grid-template-columns:1fr 1fr;gap:.8rem}
   .f-grid{grid-template-columns:1fr}
-  .hero{height:auto;min-height:600px}
+  .hero{height:auto;min-height:560px}
   .hero-arrows{display:none}
   .cart-drawer{width:100%}
   .announce{font-size:.52rem}
   .alloc-countdown>div{min-width:60px;padding:.75rem .5rem}
   .alloc-countdown b{font-size:1.2rem}
   .back-top{bottom:20px;right:20px;width:42px;height:42px}
+  .policy-grid{grid-template-columns:repeat(2,1fr);gap:.9rem;padding:0 1.2rem}
+  .sb-inner{flex-direction:column;align-items:flex-start;gap:1.4rem}
+  .sb-pct{font-size:4rem}
+  .student-band{padding:2.2rem 0}
+}
+@media(max-width:900px){
+  .policy-grid{padding:0 1.4rem}
+}
+@media(max-width:760px){
+  .policy-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -509,14 +588,18 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
 
   <div class="announce">
     <div class="announce-track">
-      <span><b>◆</b> Limited Allocation</span>
+      <span><b>◆</b> 25% Student Discount — Valid ID Required</span>
+      <span><b>◆</b> Free Delivery on First Order Over R500</span>
       <span><b>◆</b> QC Inspected On Every Order</span>
+      <span><b>◆</b> Secure Your Piece With 50% Deposit</span>
+      <span><b>◆</b> Limited Allocation — Timed Windows Only</span>
       <span><b>◆</b> Express Nationwide Delivery</span>
-      <span><b>◆</b> Curated Access — No Middleman Markup</span>
-      <span><b>◆</b> Limited Allocation</span>
+      <span><b>◆</b> 25% Student Discount — Valid ID Required</span>
+      <span><b>◆</b> Free Delivery on First Order Over R500</span>
       <span><b>◆</b> QC Inspected On Every Order</span>
+      <span><b>◆</b> Secure Your Piece With 50% Deposit</span>
+      <span><b>◆</b> Limited Allocation — Timed Windows Only</span>
       <span><b>◆</b> Express Nationwide Delivery</span>
-      <span><b>◆</b> Curated Access — No Middleman Markup</span>
     </div>
   </div>
 
@@ -617,6 +700,20 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
       </div>
     </section>
 
+    <!-- MOBILE BANNER CAROUSEL (portrait mobile only) -->
+    <div class="mobile-banners" id="mobileBanners" aria-label="Mobile promotional banners">
+      <div class="mb-track" id="mbTrack">
+        <div class="mb-slide"><img src="assets/products/banner_mobile_1.png" alt="House Aurora — New Drops" loading="eager"></div>
+        <div class="mb-slide"><img src="assets/products/banner_mobile_2.png" alt="25% Student Discount" loading="lazy"></div>
+        <div class="mb-slide"><img src="assets/products/banner_mobile_3.png" alt="Exclusive Tier Drops" loading="lazy"></div>
+      </div>
+      <div class="mb-dots" id="mbDots">
+        <button class="mb-dot on" data-i="0" aria-label="Banner 1"></button>
+        <button class="mb-dot" data-i="1" aria-label="Banner 2"></button>
+        <button class="mb-dot" data-i="2" aria-label="Banner 3"></button>
+      </div>
+    </div>
+
     <!-- CURATED CATEGORY PILLARS -->
     <section class="pillars">
       <div class="wrap">
@@ -652,6 +749,49 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
             <span class="img-slot" data-file="category-luxury-accessories" data-label="Luxury"></span>
             <div class="pillar-body"><h3>Luxury</h3><span>Beanies · Slides · Access</span></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT DISCOUNT BAND -->
+    <section class="student-band reveal">
+      <div class="sb-inner">
+        <div class="sb-copy">
+          <span class="eyebrow">Campus Access</span>
+          <h3>25% Off<br>Everything — For Students</h3>
+          <p>Present a valid student card at checkout or DM us to verify. No limits, no exceptions — just culture at the right price.</p>
+        </div>
+        <div class="sb-badge">
+          <div>
+            <div class="sb-pct">25%<span>Student Discount</span></div>
+          </div>
+          <button class="btn btn-bronze" id="studentLearnBtn">How To Claim</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICY STRIP -->
+    <section class="policy-strip">
+      <div class="policy-grid">
+        <div class="policy-item reveal" id="policyDeposit">
+          <div class="policy-icon">◈</div>
+          <h4>50% Deposit</h4>
+          <p>Secure your piece now — pay the balance only when it's in transit to you.</p>
+        </div>
+        <div class="policy-item reveal">
+          <div class="policy-icon">✦</div>
+          <h4>Free First Delivery</h4>
+          <p>First-time customers get free express delivery on any order over R500.</p>
+        </div>
+        <div class="policy-item reveal">
+          <div class="policy-icon">◎</div>
+          <h4>QC Every Order</h4>
+          <p>Individually inspected in the studio — stitching, hardware, alignment, all of it.</p>
+        </div>
+        <div class="policy-item reveal">
+          <div class="policy-icon">⟳</div>
+          <h4>Nationwide Express</h4>
+          <p>Shipped from Johannesburg in signature bronze-foil packaging — tracked, fast.</p>
         </div>
       </div>
     </section>
@@ -765,6 +905,12 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
       </div>
     </section>
 
+    <!-- BOTTOM CONVERSION BANNER -->
+    <div style="position:relative;overflow:hidden;max-height:220px;display:block">
+      <img src="assets/products/bottom_banner_1.png" alt="House Aurora — Checkout" style="width:100%;object-fit:cover;display:block;max-height:220px">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(26,24,23,.7) 0%,transparent 50%,rgba(26,24,23,.7) 100%)"></div>
+    </div>
+
     <!-- COMMUNITY / NEWSLETTER -->
     <section class="community">
       <div class="bg" id="footerBg"></div>
@@ -808,6 +954,8 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
           <ul>
             <li><a id="fGuideFoot">Footwear Sizing Guide</a></li>
             <li><a id="fGuideFit">Apparel Fit Guide</a></li>
+            <li><a id="fStudentDisc">Student Discount</a></li>
+            <li><a id="fDeposit">50% Deposit Policy</a></li>
             <li><a>Shipping &amp; Delivery</a></li>
             <li><a>Returns Policy</a></li>
           </ul>
@@ -851,11 +999,23 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
     <div class="bar"><i id="giftBar"></i></div>
   </div>
   <div class="cart-items" id="cartItems"></div>
+  <div class="checkout-deposit" id="checkoutDeposit">
+    <div class="cd-row">
+      <span class="cd-label">Payment Option</span>
+      <div class="cd-toggle">
+        <button class="cd-opt on" id="cdFull">Full Payment</button>
+        <button class="cd-opt" id="cdDeposit">50% Deposit</button>
+      </div>
+    </div>
+    <p class="cd-note" id="cdNote">Pay in full today and your order ships immediately after QC.</p>
+  </div>
   <div class="cart-foot" id="cartFoot">
     <div class="cart-row"><span>Subtotal</span><span id="cartSub">R0</span></div>
-    <div class="cart-row"><span>Express Shipping</span><span>Complimentary</span></div>
+    <div class="cart-row"><span>Express Shipping</span><span id="cartShipping">Complimentary</span></div>
+    <div class="cart-row" id="depositRow" style="display:none;color:var(--bronze-dk)"><span>Due Today (50%)</span><span id="cartDue">R0</span></div>
     <div class="cart-total"><span>Total</span><b id="cartTotal">R0</b></div>
     <button class="btn btn-bronze" id="checkoutBtn">Proceed To Checkout</button>
+    <p style="text-align:center;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(43,30,26,.38);margin-top:.8rem">Secure checkout · QC inspected · Express delivery</p>
   </div>
 </aside>
 
@@ -913,6 +1073,83 @@ footer{background:var(--slate);color:var(--oatmeal);padding:4.5rem 0 0;position:
       <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <div id="sgContent"></div>
+  </div>
+</div>
+
+<!-- ORIENTATION LOCK -->
+<div id="orientLock" role="dialog" aria-label="Please rotate your device">
+  <div class="ol-icon">📱</div>
+  <div class="ol-title">Portrait Mode</div>
+  <div class="ol-text">Please rotate your device back to portrait for the best experience</div>
+</div>
+
+<!-- DEPOSIT INFO MODAL -->
+<div class="dep-modal" id="depModal">
+  <div class="dep-box">
+    <button class="dep-close" id="depClose"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <span class="eyebrow">Flexible Payment</span>
+    <h3>50% Deposit<br>Policy</h3>
+    <p style="font-size:.86rem;color:rgba(43,30,26,.62);line-height:1.85;font-weight:300;margin-bottom:.4rem">House Aurora lets you secure any piece with just 50% upfront. The remaining balance is only triggered once your order is in transit — protecting both your cash flow and your allocation.</p>
+    <div class="dep-steps">
+      <div class="dep-step">
+        <div class="dep-num">1</div>
+        <div class="dep-step-body">
+          <h4>Secure Your Piece</h4>
+          <p>Pay 50% of the total at checkout. Your allocation is reserved immediately in our system.</p>
+        </div>
+      </div>
+      <div class="dep-step">
+        <div class="dep-num">2</div>
+        <div class="dep-step-body">
+          <h4>QC In The Studio</h4>
+          <p>Every piece is opened and inspected before it leaves. Photography, stitching check, hardware review — full clearance.</p>
+        </div>
+      </div>
+      <div class="dep-step">
+        <div class="dep-num">3</div>
+        <div class="dep-step-body">
+          <h4>Balance Due On Dispatch</h4>
+          <p>Once your order is cleared and in transit locally, you'll receive a payment link for the remaining 50%.</p>
+        </div>
+      </div>
+    </div>
+    <p class="dep-note">This model protects your access without locking your full budget upfront. Available on all items. Contact us via WhatsApp or Instagram to initiate a deposit order.</p>
+    <button class="btn btn-bronze" id="depClose2" style="width:100%;margin-top:1.2rem">Got It</button>
+  </div>
+</div>
+
+<!-- STUDENT DISCOUNT MODAL -->
+<div class="dep-modal" id="stuModal">
+  <div class="dep-box">
+    <button class="dep-close" id="stuClose"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <span class="eyebrow">Campus Access</span>
+    <h3>25% Student<br>Discount</h3>
+    <p style="font-size:.86rem;color:rgba(43,30,26,.62);line-height:1.85;font-weight:300;margin-bottom:.4rem">Designed for students who deserve access to culture without compromise. A flat 25% off the drop price on every piece — no exclusions.</p>
+    <div class="dep-steps">
+      <div class="dep-step">
+        <div class="dep-num">1</div>
+        <div class="dep-step-body">
+          <h4>Add Your Items</h4>
+          <p>Browse the catalogue and select the pieces you want.</p>
+        </div>
+      </div>
+      <div class="dep-step">
+        <div class="dep-num">2</div>
+        <div class="dep-step-body">
+          <h4>Send Verification</h4>
+          <p>DM us on Instagram or WhatsApp with a photo of your valid student card — any institution accepted.</p>
+        </div>
+      </div>
+      <div class="dep-step">
+        <div class="dep-num">3</div>
+        <div class="dep-step-body">
+          <h4>Get Your Code</h4>
+          <p>We'll verify and send you a one-time discount code. The student price shown on each product card is what you pay.</p>
+        </div>
+      </div>
+    </div>
+    <p class="dep-note">Valid student identification only. One discount per order. Student prices are already displayed on every product card — what you see is what you pay.</p>
+    <button class="btn btn-bronze" id="stuClose2" style="width:100%;margin-top:1.2rem">Claim My Discount</button>
   </div>
 </div>
 
@@ -1150,12 +1387,28 @@ function expandSizes(code){
   return map[code]||['One Size'];
 }
 
+/* Price bump for exclusive/limited/collab items:
+   +R200 for lim, +R300 for lim+qc collab, +R400 for lim+qc supreme/LV/collab tiers */
+function applyExclusiveBump(drop,std,student,badgeCodes,brand){
+  const codes=badgeCodes||'';
+  const isLim=codes.includes('lim');
+  const isQC=codes.includes('qc');
+  const isCollab=/supreme|north face|stüssy|stussy|reigning|bad bunny|nocta|louis vuitton|lv/i.test(brand);
+  if(!isLim)return{price:+drop,old:+std,student:+student};
+  const bump=isCollab?400:isQC?300:200;
+  const p=+drop+bump;
+  const s=+std+bump;
+  const st=+student?Math.round(+student+(bump*0.75)):0;
+  return{price:p,old:s,student:st};
+}
+
 const PRODUCTS=RAW.split('\n').map((line,i)=>{
   const[slug,file,cat,brand,name,variant,drop,std,student,badges,sizes]=line.split('|');
+  const{price,old,student:stu}=applyExclusiveBump(drop,std,student,badges,brand);
   return{
     id:'p'+i,slug:(slug||'').trim(),file:file.trim(),cat:cat.trim(),
     brand:brand.trim(),name:name.trim(),variant:variant.trim(),
-    price:+drop,old:+std,student:+student,
+    price,old,student:stu,
     badges:(badges||'').split(',').filter(Boolean).map(k=>BADGE_MAP[k]).filter(Boolean),
     sizes:expandSizes(sizes?sizes.trim():'')
   };
@@ -1371,7 +1624,7 @@ function goHero(i){
     if(k===heroI)d.classList.add('active');
   });
   clearTimeout(heroTimer);
-  heroTimer=setTimeout(()=>goHero(heroI+1),7000);
+  heroTimer=setTimeout(()=>goHero(heroI+1),12000);
 }
 heroDots.forEach(d=>d.addEventListener('click',()=>goHero(+d.dataset.i)));
 $('#heroNext').addEventListener('click',()=>goHero(heroI+1));
@@ -1631,7 +1884,7 @@ function openQuick(id){
       <span class="qv-drop">${money(p.price)}</span>
       ${p.old?`<span class="qv-std">${money(p.old)}</span>`:''}
     </div>
-    ${p.student?`<div class="qv-student">Student Access <b>${money(p.student)}</b> — 10% extra off verified</div>`:''}
+    ${p.student?`<div class="qv-student">✦ 25% Student Discount Applied — <b>${money(p.student)}</b> with valid ID</div>`:''}
     <div class="stock">Only ${STOCK[p.id]} available in this allocation</div>
     <p class="qv-desc">Sourced direct, inspected in the House Aurora studio, and shipped express nationwide in signature bronze-foil packaging.</p>
     <span class="qv-label">Select Size</span>
@@ -1800,10 +2053,7 @@ function closeCart(){
 $('#cartBtn').addEventListener('click',openCart);
 $('#cartClose').addEventListener('click',closeCart);
 $('#overlay').addEventListener('click',()=>{closeCart();closeQuick();});
-$('#checkoutBtn').addEventListener('click',()=>{
-  if(!cart.length)return;
-  toast('Checkout demo — payment gateway would open here');
-});
+/* checkout handled below */
 renderCart();
 
 /* ---------- TIMED ARCHIVAL ALLOCATION ---------- */
@@ -2001,6 +2251,165 @@ $('#sizeGuide').addEventListener('click',e=>{if(e.target===$('#sizeGuide'))$('#s
 /* Footer guide links */
 $('#fGuideFoot').addEventListener('click',()=>openSizeGuide('footwear'));
 $('#fGuideFit').addEventListener('click',()=>openSizeGuide('apparel'));
+$('#fStudentDisc')&&$('#fStudentDisc').addEventListener('click',()=>{
+  const m=$('#stuModal');if(m){m.classList.add('on');document.body.classList.add('locked');}
+});
+$('#fDeposit')&&$('#fDeposit').addEventListener('click',()=>{
+  const m=$('#depModal');if(m){m.classList.add('on');document.body.classList.add('locked');}
+});
+
+/* ---------- MOBILE BANNER CAROUSEL ---------- */
+(function(){
+  const track=$('#mbTrack');
+  const dots=$$('#mbDots .mb-dot');
+  if(!track)return;
+  let idx=0,timer,touchX=null;
+  function goBanner(i){
+    idx=(i+3)%3;
+    track.style.transform=`translateX(-${idx*100}%)`;
+    dots.forEach((d,k)=>d.classList.toggle('on',k===idx));
+    clearTimeout(timer);
+    timer=setTimeout(()=>goBanner(idx+1),6000);
+  }
+  dots.forEach(d=>d.addEventListener('click',()=>goBanner(+d.dataset.i)));
+  track.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;clearTimeout(timer);},{passive:true});
+  track.addEventListener('touchend',e=>{
+    if(touchX==null)return;
+    const dx=e.changedTouches[0].clientX-touchX;
+    if(Math.abs(dx)>40)goBanner(idx+(dx<0?1:-1));
+    else timer=setTimeout(()=>goBanner(idx+1),6000);
+    touchX=null;
+  });
+  goBanner(0);
+})();
+
+/* ---------- ORIENTATION LOCK ---------- */
+(function(){
+  const lock=document.getElementById('orientLock');
+  if(!lock)return;
+  function check(){
+    const landscape=window.innerWidth>window.innerHeight&&window.innerHeight<500;
+    lock.style.display=landscape?'flex':'none';
+  }
+  window.addEventListener('resize',check,{passive:true});
+  window.addEventListener('orientationchange',()=>setTimeout(check,200));
+  check();
+})();
+
+/* ---------- DEPOSIT MODAL ---------- */
+(function(){
+  const modal=$('#depModal');
+  if(!modal)return;
+  function open(){modal.classList.add('on');document.body.classList.add('locked');}
+  function close(){modal.classList.remove('on');document.body.classList.remove('locked');}
+  $('#policyDeposit')&&$('#policyDeposit').addEventListener('click',open);
+  $('#depClose')&&$('#depClose').addEventListener('click',close);
+  $('#depClose2')&&$('#depClose2').addEventListener('click',close);
+  modal.addEventListener('click',e=>{if(e.target===modal)close();});
+})();
+
+/* ---------- STUDENT MODAL ---------- */
+(function(){
+  const modal=$('#stuModal');
+  if(!modal)return;
+  function open(){modal.classList.add('on');document.body.classList.add('locked');}
+  function close(){modal.classList.remove('on');document.body.classList.remove('locked');}
+  $('#studentLearnBtn')&&$('#studentLearnBtn').addEventListener('click',open);
+  $('#stuClose')&&$('#stuClose').addEventListener('click',close);
+  $('#stuClose2')&&$('#stuClose2').addEventListener('click',close);
+  modal.addEventListener('click',e=>{if(e.target===modal)close();});
+})();
+
+/* ---------- DEPOSIT TOGGLE IN CART ---------- */
+(function(){
+  let depositMode=false;
+  const cdFull=$('#cdFull');
+  const cdDeposit=$('#cdDeposit');
+  const cdNote=$('#cdNote');
+  const depositRow=$('#depositRow');
+  const cartDue=$('#cartDue');
+  const cartShipping=$('#cartShipping');
+  if(!cdFull||!cdDeposit)return;
+
+  function updateDepositUI(){
+    const t=cartTotal();
+    if(depositMode){
+      cdNote.textContent='You pay 50% now to reserve your allocation. Balance is due when your order is in transit.';
+      depositRow.style.display='flex';
+      cartDue.textContent=money(Math.ceil(t/2));
+    } else {
+      cdNote.textContent='Pay in full today and your order ships immediately after QC.';
+      depositRow.style.display='none';
+    }
+  }
+
+  cdFull.addEventListener('click',()=>{
+    depositMode=false;
+    cdFull.classList.add('on');cdDeposit.classList.remove('on');
+    updateDepositUI();
+  });
+  cdDeposit.addEventListener('click',()=>{
+    depositMode=true;
+    cdDeposit.classList.add('on');cdFull.classList.remove('on');
+    updateDepositUI();
+  });
+
+  /* Patch renderCart to also update deposit UI */
+  const _origRender=window._ha_renderCart;
+  const origCheckout=$('#checkoutBtn');
+  if(origCheckout){
+    origCheckout.addEventListener('click',()=>{
+      if(!cart.length)return;
+      const t=cartTotal();
+      const msg=depositMode
+        ?`Deposit checkout — Due today: ${money(Math.ceil(t/2))} of ${money(t)}`
+        :`Full payment checkout — Total: ${money(t)}`;
+      toast(msg);
+    });
+  }
+
+  /* Re-patch updateGiftBar to also call updateDepositUI */
+  const _orig=window.updateGiftBar;
+  window.updateGiftBar=function(){
+    if(typeof _orig==='function')_orig();
+    updateDepositUI();
+  };
+})();
+
+/* ---------- FIRST-TIME FREE DELIVERY DETECTION ---------- */
+(function(){
+  const cartShip=$('#cartShipping');
+  if(!cartShip)return;
+  let isFirstTime=true;
+  try{isFirstTime=!localStorage.getItem('ha_ordered');}catch(e){}
+  /* Override shipping display in cart via renderCart observation */
+  const origCartRow=$('.cart-row');
+  function patchShipping(){
+    const t=cartTotal();
+    if(!cartShip)return;
+    if(isFirstTime&&t>=500){
+      cartShip.textContent='Free (First Order)';
+      cartShip.style.color='var(--bronze)';
+    } else {
+      cartShip.textContent='Complimentary';
+      cartShip.style.color='';
+    }
+  }
+  /* Observe cart changes */
+  const cartItems=$('#cartItems');
+  if(cartItems){
+    new MutationObserver(patchShipping).observe(cartItems,{childList:true,subtree:true});
+  }
+  patchShipping();
+})();
+
+/* ---------- CHECKOUT BUTTON OVERRIDE (deposit-aware) ---------- */
+$('#checkoutBtn').removeEventListener('click',()=>{});
+$('#checkoutBtn').addEventListener('click',()=>{
+  if(!cart.length)return;
+  try{localStorage.setItem('ha_ordered','1');}catch(e){}
+  toast('Proceeding to checkout — payment gateway would open here');
+});
 
 /* ---------- BACK TO TOP ---------- */
 (function(){
